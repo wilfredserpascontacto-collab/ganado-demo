@@ -231,6 +231,35 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
 .visit .when dt{color:var(--muted)}
 .visit .when dd{font-weight:600;text-align:right}
 @media (max-width:860px){.visit{grid-template-columns:minmax(0,1fr)}}
+
+/* portada en teléfono: la foto a pantalla completa y el texto encima */
+.lead-s,.demo .s,.hs{display:none}
+@keyframes sube{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@media (max-width:860px){
+  .demo .l{display:none}.demo .s{display:inline}
+  .wrap.hero{max-width:none;padding:0;display:block;position:relative;margin-bottom:8px}
+  .hero-text{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;padding:96px clamp(22px,7vw,40px) 104px;color:#F4F7F1;background:linear-gradient(180deg,rgba(8,16,11,.5) 0%,rgba(8,16,11,0) 26%,rgba(8,16,11,.32) 50%,rgba(8,16,11,.9) 100%)}
+  .hero-text>*{animation:sube .7s both}
+  .hero-text>*:nth-child(2){animation-delay:.08s}.hero-text>*:nth-child(3){animation-delay:.16s}.hero-text>*:nth-child(5){animation-delay:.24s}
+  .hero-text .eyebrow{color:#D5E1D8}
+  .hero h1{font-size:clamp(2.2rem,9.6vw,3.3rem);line-height:1.02;color:#fff;margin-top:12px;text-shadow:0 2px 20px rgba(0,0,0,.35)}
+  .hero .lead{display:none}
+  .hero h1 .hl{display:none}.hero h1 .hs{display:inline}.hero .btn .hl2{display:none}.hero .btn .hs{display:inline}
+  .hero h1 mark{color:inherit;white-space:nowrap}
+  .hero .lead-s{display:block;margin-top:14px;font-size:1.06rem;line-height:1.45;color:#E6EDE8;max-width:30ch}
+  .hero .cta{margin-top:22px;gap:10px;flex-wrap:nowrap}
+  .hero .cta .btn{flex:1 1 0;min-width:0;padding:0 12px;white-space:nowrap}
+  .hero .cta .btn:not(.primary){border-color:rgba(255,255,255,.75);color:#fff}
+  .facts{display:none}
+  .stage{border:0;border-radius:0;background:var(--deep)}
+  .stage img.photo{height:clamp(520px,calc(100vh - 112px),760px)!important;height:clamp(520px,calc(100svh - 112px),760px)!important;aspect-ratio:auto!important;object-position:47% 36%!important}
+  .stage-ledger{position:absolute;left:16px;right:16px;bottom:16px;z-index:3;background:rgba(8,16,11,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:14px;color:#fff}
+  .stage-ledger div{padding:11px 14px}
+  .stage-ledger div+div{border-left-color:rgba(255,255,255,.2)}
+  .stage-ledger dt{color:#C9D6CC;font-size:9.5px;letter-spacing:.08em}
+  .stage-ledger dd{color:#fff;font-size:1.05rem;margin-top:6px}
+}
+@media (prefers-reduced-motion:reduce){.hero-text>*{animation:none!important}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
 [hidden]{display:none!important}
 </style>
@@ -238,7 +267,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
 <body>
 
 
-<div class="demo"><div class="wrap"><b>DEMO</b>Diseño de ejemplo: el nombre, los lotes, los precios y los contactos son inventados.</div></div>
+<div class="demo"><div class="wrap"><b>DEMO</b><span class="l">Diseño de ejemplo: el nombre, los lotes, los precios y los contactos son inventados.</span><span class="s">Nombre y datos de ejemplo</span></div></div>
 
 <header class="top">
   <div class="wrap">
@@ -257,12 +286,13 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
 
 <main id="inicio">
   <section class="wrap hero">
-    <div>
+    <div class="hero-text">
       <div class="eyebrow">Ganadería · El Salvador</div>
-      <h1>Compra ganado <mark>por libra</mark>, con la báscula a la vista.</h1>
+      <h1><span class="hl">Compra ganado <mark>por libra</mark>, con la báscula a la vista.</span><span class="hs">Ganado<br><mark>por libra</mark>,<br>sin sorpresas.</span></h1>
+      <p class="lead-s">Edad, peso y ficha sanitaria de cada lote, a la vista.</p>
       <p class="lead">Lotes de engorde y de pie de cría de nuestras fincas. Cada uno trae su edad, su peso, su precio por libra y su ficha sanitaria, para que sepas qué llevas antes de visitar el potrero.</p>
       <div class="cta">
-        <a class="btn primary" href="#lotes">Ver lotes disponibles</a>
+        <a class="btn primary" href="#lotes"><span class="hl2">Ver lotes disponibles</span><span class="hs">Ver los lotes</span></a>
         <a class="btn" href="#como">Cómo se compra</a>
       </div>
       <ul class="facts">
