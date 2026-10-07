@@ -280,7 +280,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
 <body>
 
 
-<div class="demo"><div class="wrap"><b>DEMO</b><span class="l">Diseño de ejemplo: los lotes son de ejemplo. Las fotos y el teléfono son reales.</span><span class="s">Lotes de ejemplo</span></div></div>
+<div class="demo"><div class="wrap"><b>DEMO</b><span class="l" id="avisoLargo"></span><span class="s">Lotes de ejemplo</span></div></div>
 
 <header class="top">
   <div class="wrap">
@@ -427,7 +427,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
     <div>
       <img class="flogo" src="img/logo.jpg" width="150" height="157" alt="Logo de Rancho La Guayabia">
       <p class="big">Rancho La Guayabia</p>
-      <p class="muted">Se compra &amp; se vende. Ganado de engorde y pie de cría. Esta página es un demo de diseño: los lotes son de ejemplo.</p>
+      <p class="muted">Se compra &amp; se vende. Ganado de engorde y pie de cría. <span id="avisoPie"></span></p>
     </div>
     <div>
       <h3>En esta página</h3>
@@ -712,6 +712,12 @@ $("#copy").addEventListener("click", async () => {
 
 for (const a of document.querySelectorAll(".wa-link")) a.href = waHref(a.dataset.wa);
 $("#numtxt").textContent = TEL.visible;
+$("#avisoLargo").textContent = ES_EJEMPLO
+  ? "Diseño de ejemplo: los lotes y el teléfono son de ejemplo. Las fotos son reales."
+  : "Diseño de ejemplo: los lotes son de ejemplo. Las fotos y el teléfono son reales.";
+$("#avisoPie").textContent = ES_EJEMPLO
+  ? "Esta página es un demo de diseño: los lotes y el teléfono son de ejemplo."
+  : "Esta página es un demo de diseño: los lotes son de ejemplo.";
 if (ES_EJEMPLO) $("#numtxt").closest(".num").insertAdjacentHTML("afterend",
   `<p class="muted" style="margin-top:10px;font-size:.85rem">Número de ejemplo.</p>`);
 pintaFiltros(); pintaGrid(); pintaBarra();
