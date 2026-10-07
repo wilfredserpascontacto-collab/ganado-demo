@@ -122,6 +122,7 @@ button,select{font:inherit;color:inherit}
 .ledger div{padding:10px 0 11px}
 .ledger div+div{padding-left:14px;border-left:1px solid var(--line)}
 .ledger dd{font:600 1rem/1.2 var(--font-mono);margin-top:7px;font-variant-numeric:tabular-nums}
+.ledger dd.ask,.specs dd.ask{font:600 .92rem/1.3 var(--font-body);color:var(--leaf)}
 .mini{display:flex;flex-wrap:wrap;gap:6px}
 .mini li{font-size:.76rem;padding:4px 9px;border-radius:6px;background:var(--surface);border:1px solid var(--line);color:var(--muted)}
 .card .more{margin-top:auto;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.92rem}
@@ -222,11 +223,11 @@ footer{background:var(--deep);color:var(--deep-ink);margin-top:clamp(24px,4vw,56
 /* fotos */
 img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:cover;background:var(--surface)}
 .band-fig{position:relative;margin:0;border-radius:22px;overflow:hidden;aspect-ratio:21/8;background:var(--surface)}
-.band-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 38%}
+.band-fig img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%}
 .band-fig figcaption{position:absolute;left:0;right:0;bottom:0;padding:48px clamp(18px,3vw,36px) clamp(16px,2.4vw,28px);background:linear-gradient(transparent,rgba(8,18,12,.82));color:#F2F6EF;font:650 clamp(1.1rem,2.2vw,1.7rem)/1.2 var(--font-display);letter-spacing:-.015em;text-wrap:balance}
 .band-fig figcaption small{display:block;margin-top:8px;font:500 .8rem/1.4 var(--font-mono);letter-spacing:.06em;color:#C5D3C8}
 @media (max-width:640px){.band-fig{aspect-ratio:4/3}}
-.sheet .ph{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:40% 45%;border-bottom:1px solid var(--line)}
+.sheet .ph{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;object-position:50% 50%;border-bottom:1px solid var(--line)}
 
 .brand .logo{width:38px;height:38px;border-radius:50%;flex:none;box-shadow:0 0 0 1px var(--line)}
 .flogo{display:block;width:132px;height:auto;border-radius:50%;background:#F7F7F7;margin-bottom:18px;box-shadow:0 0 0 3px rgba(232,185,35,.55)}
@@ -264,7 +265,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
   .hero .cta .btn:not(.primary){border-color:rgba(255,255,255,.75);color:#fff}
   .facts{display:none}
   .stage{border:0;border-radius:0;background:var(--deep)}
-  .stage img.photo{height:clamp(520px,calc(100vh - 112px),760px)!important;height:clamp(520px,calc(100svh - 112px),760px)!important;aspect-ratio:auto!important;object-position:47% 36%!important}
+  .stage img.photo{height:clamp(520px,calc(100vh - 112px),760px)!important;height:clamp(520px,calc(100svh - 112px),760px)!important;aspect-ratio:auto!important;object-position:33% 50%!important}
   .stage-ledger{position:absolute;left:16px;right:16px;bottom:16px;z-index:3;background:rgba(10,17,24,.5);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.2);border-radius:14px;color:#fff}
   .stage-ledger div{padding:11px 14px}
   .stage-ledger div+div{border-left-color:rgba(255,255,255,.2)}
@@ -279,7 +280,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
 <body>
 
 
-<div class="demo"><div class="wrap"><b>DEMO</b><span class="l">Diseño de ejemplo: los lotes, los precios y los contactos son de ejemplo.</span><span class="s">Lotes y precios de ejemplo</span></div></div>
+<div class="demo"><div class="wrap"><b>DEMO</b><span class="l">Diseño de ejemplo: los lotes son de ejemplo. Las fotos y el teléfono son reales.</span><span class="s">Lotes de ejemplo</span></div></div>
 
 <header class="top">
   <div class="wrap">
@@ -302,7 +303,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
       <div class="eyebrow">Ganado Gyr · Se compra &amp; se vende</div>
       <h1><span class="hl">Compra ganado <mark>por libra</mark>, con la báscula a la vista.</span><span class="hs">Ganado<br><mark>por libra</mark>,<br>sin sorpresas.</span></h1>
       <p class="lead-s">Edad, peso y ficha sanitaria de cada lote, a la vista.</p>
-      <p class="lead">Lotes de engorde y de pie de cría de nuestras fincas. Cada uno trae su edad, su peso, su precio por libra y su ficha sanitaria, para que sepas qué llevas antes de visitar el potrero.</p>
+      <p class="lead">Lotes de engorde y de pie de cría de nuestras fincas. Cada uno trae su edad, su peso y su ficha sanitaria. El precio se da por WhatsApp.</p>
       <div class="cta">
         <a class="btn primary" href="#lotes"><span class="hl2">Ver lotes disponibles</span><span class="hs">Ver los lotes</span></a>
         <a class="btn" href="#como">Cómo se compra</a>
@@ -322,7 +323,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
         <div class="eyebrow">Libro de lotes</div>
         <h2>Lo que hay en el potrero esta semana</h2>
       </div>
-      <p class="sub">Toca un lote para ver su ficha, calcular el total y agregarlo a tu selección.</p>
+      <p class="sub">Toca un lote para ver su ficha y agregarlo a tu selección. Mándanos la lista por WhatsApp y te pasamos precio.</p>
     </div>
     <div class="tools">
       <div class="chips" id="chips" role="group" aria-label="Tipo de ganado"></div>
@@ -330,7 +331,6 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
         <select class="select" id="zona" aria-label="Departamento"></select>
         <select class="select" id="orden" aria-label="Ordenar por">
           <option value="lote">Por número de lote</option>
-          <option value="precio">Menor precio por cabeza</option>
           <option value="peso">Mayor peso</option>
         </select>
       </div>
@@ -341,7 +341,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
 
   <section class="wrap band" aria-label="Manada de ganado en el camino">
     <figure class="band-fig">
-      <img src="" alt="Manada de vacas cruzando un camino, con aretes amarillos en las orejas" id="img-band">
+      <img src="" alt="Parte de la manada en el potrero, mirando a cámara" id="img-band">
       <figcaption>Cada animal sale identificado con su arete.<small>Foto de ejemplo</small></figcaption>
     </figure>
   </section>
@@ -374,7 +374,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
         </ul>
       </div>
       <div class="sheet">
-        <img class="ph" id="img-sanidad" src="" alt="Retrato de una vaquilla con arete amarillo numerado en la oreja">
+        <img class="ph" id="img-sanidad" src="" alt="Vaquilla pinta de frente, con su arete en la oreja">
         <header>
           <span class="eartag" style="padding:14px 9px 6px;border-radius:8px 8px 12px 12px"><small>LOTE</small><span style="font-size:.95rem">0148</span></span>
           <b>Ficha de ejemplo · 6 cabezas</b>
@@ -396,7 +396,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
   </section>
   <section class="wrap sec" id="visitas">
     <div class="visit">
-      <img id="img-visita" src="" alt="Dos vacas comiendo frente a frente en un comedero de concreto">
+      <img id="img-visita" src="" alt="Dos reses en el corral de manejo">
       <div>
         <div class="eyebrow">Visitas</div>
         <h2>Ven a verlos antes de decidir</h2>
@@ -406,7 +406,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
           <div><dt>Horario</dt><dd>6:00 a. m. a 4:00 p. m.</dd></div>
           <div><dt>Finca</dt><dd>San Ildelfonso</dd></div>
         </dl>
-        <a class="btn primary" target="_blank" rel="noopener" href="https://wa.me/50370000000?text=Hola%2C%20quiero%20coordinar%20una%20visita%20a%20la%20finca.">Coordinar una visita por WhatsApp</a>
+        <a class="btn primary wa-link" data-wa="Hola, quiero coordinar una visita a la finca." target="_blank" rel="noopener" href="#">Coordinar una visita por WhatsApp</a>
       </div>
     </div>
   </section>
@@ -417,7 +417,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
         <h2>¿Tienes ganado para vender?</h2>
         <p>También compramos. Cuéntanos cuántas cabezas tienes, la raza y el peso aproximado, y te respondemos con una oferta.</p>
       </div>
-      <a class="btn primary" target="_blank" rel="noopener" href="https://wa.me/50370000000?text=Hola%2C%20tengo%20ganado%20para%20vender.%20Cantidad%3A%20%20Raza%3A%20%20Peso%20aproximado%3A%20">Cotizar mi ganado</a>
+      <a class="btn primary wa-link" data-wa="Hola, tengo ganado para vender. Cantidad:  Raza:  Peso aproximado: " target="_blank" rel="noopener" href="#">Cotizar mi ganado</a>
     </div>
   </section>
 </main>
@@ -427,7 +427,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
     <div>
       <img class="flogo" src="img/logo.jpg" width="150" height="157" alt="Logo de Rancho La Guayabia">
       <p class="big">Rancho La Guayabia</p>
-      <p class="muted">Se compra &amp; se vende. Ganado de engorde y pie de cría. Esta página es un demo de diseño: los lotes, los precios y los contactos son de ejemplo.</p>
+      <p class="muted">Se compra &amp; se vende. Ganado de engorde y pie de cría. Esta página es un demo de diseño: los lotes son de ejemplo.</p>
     </div>
     <div>
       <h3>En esta página</h3>
@@ -440,8 +440,8 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
     </div>
     <div>
       <h3>WhatsApp</h3>
-      <div class="num"><code id="numtxt">+503 7000 0000</code><button class="copy" id="copy" type="button">Copiar</button></div>
-      <p class="muted" style="margin-top:10px;font-size:.85rem">Número de ejemplo.</p>
+      <div class="num"><code id="numtxt"></code><button class="copy" id="copy" type="button">Copiar</button></div>
+      
     </div>
   </div>
 </footer>
@@ -449,7 +449,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
 <div class="tray" id="tray" hidden><div class="wrap"><ul id="trayList"></ul><button class="link" id="clear" type="button">Vaciar selección</button></div></div>
 <div class="bar" id="bar" hidden>
   <div class="wrap">
-    <div class="sum"><b id="sumTotal">$0</b><span id="sumText"></span></div>
+    <div class="sum"><b id="sumTotal">0 cabezas</b><span id="sumText"></span></div>
     <div class="acts">
       <button class="btn sm" id="toggleTray" type="button" aria-expanded="false" aria-controls="tray">Ver selección</button>
       <a class="btn primary sm" id="wa" href="#" target="_blank" rel="noopener">Abrir WhatsApp con mi lista</a>
@@ -470,18 +470,11 @@ const IMG = {
   p6:"img/p6.jpg",
   p7:"img/p7.jpg",
   p8:"img/p8.jpg",
-  p9:"img/p9.jpg",
-  p10:"img/p10.jpg",
   p11:"img/p11.jpg",
   p12:"img/p12.jpg"
 };
 let UID = 0;
 const BREEDS = {
-  brahman: { body: "#BDB6A6", shade: "#9C9585", dark: "#46423B", hump: true,  horn: "short", ear: "long" },
-  brangus: { body: "#2D2E31", shade: "#1E1F22", dark: "#0E0E10", hump: false, horn: null,    ear: "short" },
-  holstein:{ body: "#F3F3EF", shade: "#D5D5CE", dark: "#35363A", hump: false, horn: null,    ear: "short", patches: "#1F2023" },
-  pardo:   { body: "#8D7A69", shade: "#6E5E50", dark: "#38302A", hump: false, horn: null,    ear: "short" },
-  charolais:{ body: "#EDE6D6", shade: "#D2C8B2", dark: "#5A3E36", hump: false, horn: null, ear: "short" },
   gyr:     { body: "#A9512F", shade: "#86401F", dark: "#35190F", hump: true,  horn: "curve", ear: "long", patches: "#E6C7A2" },
 };
 function cattle(breed, scale = 1, bull = false) {
@@ -546,35 +539,45 @@ const TIPOS = {
   toro:     { uno: "Toro",     varios: "Toros",     escala: 1.04 },
   ternero:  { uno: "Ternero",  varios: "Terneros",  escala: .72 },
 };
-const RAZAS = { charolais: "Charolais", brahman: "Brahman", brangus: "Brangus", holstein: "Holstein", pardo: "Pardo Suizo", gyr: "Gyr" };
+/* La hacienda maneja una sola raza. Para agregar otra hacen falta dos cosas:
+   su nombre aqui, y su paleta en BREEDS (cuerpo, sombra, oscuro, giba,
+   cuerno, oreja), que es lo que dibuja a los lotes que no tienen foto. */
+/* EL TELEFONO VIVE AQUI Y EN NINGUN OTRO LADO.
+   La version publica de GitHub lleva el de ejemplo a proposito: el enlace
+   es abierto y el WhatsApp del dueno no se publica sin que el lo pida.
+   Para poner el de verdad se cambian estas dos lineas y nada mas; el aviso
+   de «numero de ejemplo» desaparece solo. */
+const TEL = { wa: "50370000000", visible: "+503 7000 0000" };
+const ES_EJEMPLO = TEL.wa === "50370000000";
+const waHref = (msg) => "https://wa.me/" + TEL.wa + "?text=" + encodeURIComponent(msg);
+
+const RAZAS = { gyr: "Gyr" };
 const V = "Vacunas al día", D = "Desparasitado", B = "Brucelosis: negativo", R = "Pruebas reproductivas";
 
 const LOTES = [
-  { id: "0148", foto: "p1", tipo: "novillo",  raza: "brahman",  meses: 30, peso: 1040, modo: "lb",     precio: 1.36, cab: 6,  lugar: "Chapeltique, San Miguel",        dep: "San Miguel", estado: "ok",  sanidad: [V, D, B], nota: "Engordados a pasto. Lote parejo, listo para salida a rastro o a tu engorde." },
-  { id: "0152", foto: "p12", tipo: "novillo",  raza: "charolais",  meses: 26, peso: 960,  modo: "lb",     precio: 1.40, cab: 12, lugar: "Anamorós, La Unión",             dep: "La Unión",   estado: "res", sanidad: [V, D],    nota: "Diferencia de peso de hasta 40 lb entre los animales del lote." },
-  { id: "0155", tipo: "vaquilla", raza: "holstein", meses: 24, peso: 980,  modo: "cab",    precio: 1150, cab: 8,  lugar: "Zacatecoluca, La Paz",           dep: "La Paz",     estado: "ok",  sanidad: [V, "Preñez confirmada", B], nota: "Preñadas de cinco a seis meses. Se venden por cabeza, sin pesaje." },
-  { id: "0161", tipo: "toro",     raza: "brahman",  meses: 42, peso: 1780, modo: "cab",    precio: 2900, cab: 1,  lugar: "Chapeltique, San Miguel",        dep: "San Miguel", estado: "res", sanidad: [V, D, R], nota: "Reproductor con dos años de monta. Dócil al manejo." },
-  { id: "0163", foto: "p8", tipo: "ternero",  raza: "brahman",  meses: 8,  peso: 460,  modo: "lb",     precio: 1.70, cab: 20, lugar: "Jucuarán, Usulután",             dep: "Usulután",   estado: "ok",  sanidad: [V, D],    nota: "Destetados y adaptados a pasto." },
-  { id: "0170", foto: "p6", tipo: "vaca",     raza: "pardo",    meses: 48, peso: 1180, modo: "cab",    precio: 1350, cab: 5,  lugar: "Izalco, Sonsonate",              dep: "Sonsonate",  estado: "ok",  sanidad: [V, "Con cría al pie", B], nota: "Paridas hace dos meses, con su cría a la par. Se venden por cabeza." },
-  { id: "0174", foto: "p7", tipo: "novillo",  raza: "gyr",      meses: 32, peso: 980,  modo: "lb",     precio: 1.32, cab: 9,  lugar: "Santa Rosa de Lima, La Unión",   dep: "La Unión",   estado: "ok",  sanidad: [V, D],    nota: "Animales rústicos, de buena conversión en pasto de verano." },
-  { id: "0181", foto: "p11", tipo: "vaquilla", raza: "brangus",  meses: 20, peso: 720,  modo: "lb",     precio: 1.52, cab: 10, lugar: "Anamorós, La Unión",             dep: "La Unión",   estado: "ok",  sanidad: [V, D, B], nota: "Para pie de cría. Aptas para su primer servicio." },
-  { id: "0186", tipo: "toro",     raza: "brangus",  meses: 36, peso: 1650, modo: "cab",    precio: 2400, cab: 2,  lugar: "Jucuarán, Usulután",             dep: "Usulután",   estado: "ok",  sanidad: [V, D, R], nota: "Reproductores jóvenes, con pruebas de fertilidad al día." },
-  { id: "0190", foto: "p9", tipo: "vaca",     raza: "pardo", meses: 60, peso: 1250, modo: "cab",    precio: 1600, cab: 4,  lugar: "Zacatecoluca, La Paz",           dep: "La Paz",     estado: "ok",  sanidad: [V, B],    nota: "En producción: 22 litros por día de promedio." },
-  { id: "0193", tipo: "ternero",  raza: "gyr",      meses: 7,  peso: 410,  modo: "lb",     precio: 1.78, cab: 14, lugar: "Chapeltique, San Miguel",        dep: "San Miguel", estado: "res", sanidad: [V, D],    nota: "Destetados hace tres semanas." },
-  { id: "0197", foto: "p10", tipo: "novillo",  raza: "brahman",  meses: 24, peso: 880,  modo: "lb",     precio: 1.42, cab: 12, lugar: "Santa Rosa de Lima, La Unión",   dep: "La Unión",   estado: "ok",  sanidad: [V, D],    nota: "En ganancia de peso. Buen lote para terminar en tu finca." },
+  { id: "0148", foto: "p1", tipo: "novillo",  raza: "gyr",  meses: 30, peso: 1040, modo: "lb", cab: 6,  lugar: "Chapeltique, San Miguel",        dep: "San Miguel", estado: "ok",  sanidad: [V, D, B], nota: "Engordados a pasto. Lote parejo, listo para salida a rastro o a tu engorde." },
+  { id: "0152", foto: "p12", tipo: "novillo",  raza: "gyr",  meses: 26, peso: 960,  modo: "lb", cab: 12, lugar: "Anamorós, La Unión",             dep: "La Unión",   estado: "res", sanidad: [V, D],    nota: "Diferencia de peso de hasta 40 lb entre los animales del lote." },
+  { id: "0155", tipo: "vaquilla", raza: "gyr", meses: 24, peso: 980,  modo: "cab", cab: 8,  lugar: "Zacatecoluca, La Paz",           dep: "La Paz",     estado: "ok",  sanidad: [V, "Preñez confirmada", B], nota: "Preñadas de cinco a seis meses. Se venden por cabeza, sin pesaje." },
+  { id: "0161", tipo: "toro",     raza: "gyr",  meses: 42, peso: 1780, modo: "cab", cab: 1,  lugar: "Chapeltique, San Miguel",        dep: "San Miguel", estado: "res", sanidad: [V, D, R], nota: "Reproductor con dos años de monta. Dócil al manejo." },
+  { id: "0163", foto: "p8", tipo: "ternero",  raza: "gyr",  meses: 8,  peso: 460,  modo: "lb", cab: 20, lugar: "Jucuarán, Usulután",             dep: "Usulután",   estado: "ok",  sanidad: [V, D],    nota: "Destetados y adaptados a pasto." },
+  { id: "0170", tipo: "vaca",     raza: "gyr",    meses: 48, peso: 1180, modo: "cab", cab: 5,  lugar: "Izalco, Sonsonate",              dep: "Sonsonate",  estado: "ok",  sanidad: [V, "Con cría al pie", B], nota: "Paridas hace dos meses, con su cría a la par. Se venden por cabeza." },
+  { id: "0174", foto: "p7", tipo: "novillo",  raza: "gyr",      meses: 32, peso: 980,  modo: "lb", cab: 9,  lugar: "Santa Rosa de Lima, La Unión",   dep: "La Unión",   estado: "ok",  sanidad: [V, D],    nota: "Animales rústicos, de buena conversión en pasto de verano." },
+  { id: "0181", foto: "p11", tipo: "vaquilla", raza: "gyr",  meses: 20, peso: 720,  modo: "lb", cab: 10, lugar: "Anamorós, La Unión",             dep: "La Unión",   estado: "ok",  sanidad: [V, D, B], nota: "Para pie de cría. Aptas para su primer servicio." },
+  { id: "0186", tipo: "toro",     raza: "gyr",  meses: 36, peso: 1650, modo: "cab", cab: 2,  lugar: "Jucuarán, Usulután",             dep: "Usulután",   estado: "ok",  sanidad: [V, D, R], nota: "Reproductores jóvenes, con pruebas de fertilidad al día." },
+  { id: "0190", foto: "p6", tipo: "vaca",     raza: "gyr", meses: 60, peso: 1250, modo: "cab", cab: 4,  lugar: "Zacatecoluca, La Paz",           dep: "La Paz",     estado: "ok",  sanidad: [V, B],    nota: "En producción: 22 litros por día de promedio." },
+  { id: "0193", tipo: "ternero",  raza: "gyr",      meses: 7,  peso: 410,  modo: "lb", cab: 14, lugar: "Chapeltique, San Miguel",        dep: "San Miguel", estado: "res", sanidad: [V, D],    nota: "Destetados hace tres semanas." },
+  { id: "0197", tipo: "novillo",  raza: "gyr",  meses: 24, peso: 880,  modo: "lb", cab: 12, lugar: "Santa Rosa de Lima, La Unión",   dep: "La Unión",   estado: "ok",  sanidad: [V, D],    nota: "En ganancia de peso. Buen lote para terminar en tu finca." },
 ];
 
 const $ = (s, r = document) => r.querySelector(s);
 const n0 = (n) => Math.round(n).toLocaleString("en-US");
-const usd = (n) => "$" + n0(n);
 const lb = (n) => n0(n) + " lb";
 const edad = (m) => m < 24 ? m + " meses" : (m % 12 === 0 ? m / 12 + " años" : Math.floor(m / 12) + " años " + (m % 12) + " meses");
-const cabeza = (l, heads = 1) => heads * (l.modo === "lb" ? l.peso * l.precio : l.precio);
 const nombre = (l) => TIPOS[l.tipo].uno + " " + RAZAS[l.raza];
-const precioTxt = (l) => l.modo === "lb" ? "$" + l.precio.toFixed(2) + "<small>/lb</small>" : usd(l.precio) + "<small>/cab.</small>";
-const POS = { p1: '50% 55%', p6: '50% 50%', p7: '50% 66%', p8: '50% 48%', p9: '72% 50%', p10: '46% 56%', p11: '50% 52%', p12: '38% 40%' };
+/* Las fotos vienen recortadas al formato de su hueco: el centro es el encuadre. */
+const POS = {};
 const imagen = (l) => l.foto
-  ? `<img class="photo" src="${IMG[l.foto]}" alt="Foto de ejemplo: ${nombre(l).toLowerCase()}" style="object-position:${POS[l.foto] || '50% 50%'}">`
+  ? `<img class="photo" src="${IMG[l.foto]}" alt="Foto de ${nombre(l).toLowerCase()}" style="object-position:${POS[l.foto] || '50% 50%'}">`
   : scene(l.raza, TIPOS[l.tipo].escala, l.tipo === "toro", "Ilustración de " + nombre(l).toLowerCase());
 const tag = (id, cls = "") => `<span class="eartag ${cls}"><small>LOTE</small><span>${id}</span></span>`;
 const CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.5 3 3 6-7"/></svg>';
@@ -582,7 +585,7 @@ const CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke
 /* hero: foto y cifras del propio catalogo */
 (() => {
   const cabs = LOTES.reduce((t, l) => t + l.cab, 0), deps = new Set(LOTES.map((l) => l.dep)).size;
-  $("#hero-stage").innerHTML = `<img class="photo" src="${IMG.p5}" alt="Manada de ganado en pasto alto al atardecer, con una vaca de arete amarillo mirando a cámara" style="object-position:46% 40%;aspect-ratio:4/3">` +
+  $("#hero-stage").innerHTML = `<img class="photo" src="${IMG.p5}" alt="Vaca colorada en el potrero, con parte de la manada alrededor" style="object-position:50% 50%;aspect-ratio:4/3">` +
     `<dl class="stage-ledger"><div><dt>Lotes</dt><dd>${LOTES.length}</dd></div><div><dt>Cabezas</dt><dd>${cabs}</dd></div><div><dt>Departamentos</dt><dd>${deps}</dd></div></dl>`;
   $("#img-band").src = IMG.p3; $("#img-sanidad").src = IMG.p4; $("#img-visita").src = IMG.p2;
 })();
@@ -599,7 +602,6 @@ function pintaFiltros() {
 }
 function pintaGrid() {
   let ls = LOTES.filter((l) => (st.tipo === "todos" || l.tipo === st.tipo) && (!st.dep || l.dep === st.dep));
-  if (st.orden === "precio") ls.sort((a, b) => cabeza(a) - cabeza(b));
   if (st.orden === "peso") ls.sort((a, b) => b.peso - a.peso);
   $("#count").textContent = ls.length === 1 ? "1 lote" : ls.length + " lotes";
   if (!ls.length) { $("#grid").innerHTML = `<div class="empty" style="grid-column:1/-1">No hay lotes con ese filtro. Prueba con otro tipo o con todo el país.</div>`; return; }
@@ -608,7 +610,7 @@ function pintaGrid() {
       <div class="vis">${tag(l.id)}<span class="status ${l.estado}">${l.estado === "ok" ? "Disponible" : "Reservado"}</span>${imagen(l)}</div>
       <div class="body">
         <div><h3>${nombre(l)}</h3><p class="where">${edad(l.meses)} · ${l.lugar}</p></div>
-        <dl class="ledger"><div><dt>Peso</dt><dd>${lb(l.peso)}</dd></div><div><dt>Precio</dt><dd>${precioTxt(l)}</dd></div><div><dt>Cabezas</dt><dd>${l.cab}</dd></div></dl>
+        <dl class="ledger"><div><dt>Peso</dt><dd>${lb(l.peso)}</dd></div><div><dt>Precio</dt><dd class="ask">Consultar</dd></div><div><dt>Cabezas</dt><dd>${l.cab}</dd></div></dl>
         <ul class="mini">${l.sanidad.slice(0, 2).map((s) => `<li>${s}</li>`).join("")}</ul>
         <div class="more"><span>Ver ficha</span><span aria-hidden="true">→</span></div>
       </div>
@@ -623,22 +625,22 @@ $("#grid").addEventListener("click", (e) => { const b = e.target.closest(".open"
 /* seleccion */
 const sel = new Map();
 function totales() {
-  let cabs = 0, total = 0;
-  for (const [id, h] of sel) { const l = LOTES.find((x) => x.id === id); cabs += h; total += cabeza(l, h); }
-  return { cabs, total };
+  let cabs = 0;
+  for (const [, h] of sel) cabs += h;
+  return { cabs };
 }
 function pintaBarra() {
   const bar = $("#bar"), vacio = sel.size === 0;
   bar.hidden = vacio; document.body.classList.toggle("has-bar", !vacio);
   if (vacio) { $("#tray").hidden = true; $("#toggleTray").setAttribute("aria-expanded", "false"); return; }
-  const { cabs, total } = totales();
-  $("#sumTotal").textContent = usd(total);
-  $("#sumText").textContent = `estimado · ${sel.size} ${sel.size === 1 ? "lote" : "lotes"}, ${cabs} ${cabs === 1 ? "cabeza" : "cabezas"}`;
-  const lineas = [...sel].map(([id, h]) => { const l = LOTES.find((x) => x.id === id); return `• Lote ${id}: ${nombre(l)}, ${h} ${h === 1 ? "cabeza" : "cabezas"} (≈ ${usd(cabeza(l, h))})`; });
-  const msg = `Hola, vi su página y me interesan estos lotes:\n${lineas.join("\n")}\nTotal estimado: ${usd(total)}.\n¿Cuándo puedo visitar la finca?`;
-  $("#wa").href = "https://wa.me/50370000000?text=" + encodeURIComponent(msg);
+  const { cabs } = totales();
+  $("#sumTotal").textContent = `${cabs} ${cabs === 1 ? "cabeza" : "cabezas"}`;
+  $("#sumText").textContent = `en ${sel.size} ${sel.size === 1 ? "lote" : "lotes"} · el precio se acuerda por WhatsApp`;
+  const lineas = [...sel].map(([id, h]) => { const l = LOTES.find((x) => x.id === id); return `• Lote ${id}: ${nombre(l)}, ${h} ${h === 1 ? "cabeza" : "cabezas"}`; });
+  const msg = `Hola, vi su página y me interesan estos lotes:\n${lineas.join("\n")}\n¿Me pueden pasar precio? También quisiera saber cuándo puedo visitar la finca.`;
+  $("#wa").href = waHref(msg);
   $("#trayList").innerHTML = [...sel].map(([id, h]) => { const l = LOTES.find((x) => x.id === id);
-    return `<li>${tag(id)}<div class="t">${nombre(l)}<small>${h} ${h === 1 ? "cabeza" : "cabezas"} · ${usd(cabeza(l, h))}</small></div><button class="link" type="button" data-rm="${id}">Quitar</button></li>`; }).join("");
+    return `<li>${tag(id)}<div class="t">${nombre(l)}<small>${h} ${h === 1 ? "cabeza" : "cabezas"}</small></div><button class="link" type="button" data-rm="${id}">Quitar</button></li>`; }).join("");
   document.documentElement.style.setProperty("--bar-h", bar.offsetHeight + "px");
 }
 $("#toggleTray").addEventListener("click", () => { const t = $("#tray"); t.hidden = !t.hidden; $("#toggleTray").setAttribute("aria-expanded", String(!t.hidden)); $("#toggleTray").textContent = t.hidden ? "Ver selección" : "Ocultar selección"; });
@@ -657,7 +659,7 @@ function abre(id, origen) {
       <dl class="specs">
         <div><dt>Raza</dt><dd>${RAZAS[l.raza]}</dd></div><div><dt>Categoría</dt><dd>${TIPOS[l.tipo].uno}</dd></div>
         <div><dt>Edad</dt><dd>${edad(l.meses)}</dd></div><div><dt>Peso promedio</dt><dd class="mono">${lb(l.peso)}</dd></div>
-        <div><dt>Precio</dt><dd class="mono">${precioTxt(l)}</dd></div><div><dt>Cabezas en el lote</dt><dd class="mono">${l.cab}</dd></div>
+        <div><dt>Precio</dt><dd class="ask">Por WhatsApp</dd></div><div><dt>Cabezas en el lote</dt><dd class="mono">${l.cab}</dd></div>
       </dl>
       <div class="nota">${l.nota}</div>
       <div><h3>Sanidad</h3><ul class="checks">${l.sanidad.map((s) => `<li>${CHECK}${s}</li>`).join("")}</ul></div>
@@ -665,8 +667,7 @@ function abre(id, origen) {
         <div class="row"><strong>¿Cuántas cabezas?</strong>
           <div class="step"><button type="button" id="mn" aria-label="Una cabeza menos">−</button><output id="hv" aria-live="polite"></output><button type="button" id="mp" aria-label="Una cabeza más">+</button></div></div>
         <div class="lines" id="lines"></div>
-        <div class="total"><span>Total estimado</span><b id="tot"></b></div>
-        <p class="foot-note">${l.modo === "lb" ? "El peso final se confirma en la báscula, y el total se ajusta a ese peso." : "Precio por cabeza, sin pesaje."}</p>
+        <p class="foot-note">El precio se acuerda por WhatsApp. ${l.modo === "lb" ? "El peso final se confirma en la báscula, frente a ti." : "Este lote se vende por cabeza, sin pesaje."}</p>
       </div>
       <div class="actions">
         <button class="btn primary" id="add" type="button"${l.estado === "res" ? " disabled" : ""}></button>
@@ -683,9 +684,8 @@ function calcula() {
   const l = abierto; $("#hv").textContent = heads;
   $("#mn").disabled = heads <= 1; $("#mp").disabled = heads >= l.cab;
   $("#lines").innerHTML = l.modo === "lb"
-    ? `<div><span>Peso total estimado</span><b>${lb(l.peso * heads)}</b></div><div><span>Precio por libra</span><b>$${l.precio.toFixed(2)}</b></div>`
-    : `<div><span>Precio por cabeza</span><b>${usd(l.precio)}</b></div>`;
-  $("#tot").textContent = usd(cabeza(l, heads));
+    ? `<div><span>Peso total estimado</span><b>${lb(l.peso * heads)}</b></div>`
+    : "";
   $("#add").textContent = sel.has(l.id) ? "Actualizar mi selección" : "Agregar a mi selección";
 }
 function cierra() {
@@ -710,6 +710,10 @@ $("#copy").addEventListener("click", async () => {
   setTimeout(() => (b.textContent = "Copiar"), 1800);
 });
 
+for (const a of document.querySelectorAll(".wa-link")) a.href = waHref(a.dataset.wa);
+$("#numtxt").textContent = TEL.visible;
+if (ES_EJEMPLO) $("#numtxt").closest(".num").insertAdjacentHTML("afterend",
+  `<p class="muted" style="margin-top:10px;font-size:.85rem">Número de ejemplo.</p>`);
 pintaFiltros(); pintaGrid(); pintaBarra();
 </script>
 
