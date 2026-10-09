@@ -6,18 +6,43 @@
 <link rel="preload" as="image" href="img/p5.jpg">
 <link rel="icon" type="image/png" href="img/logo-badge.png">
 <meta name="theme-color" content="#223240">
+<!-- INDEXACION: mientras los lotes del catalogo sean de ejemplo esta linea se
+     queda. El dia que entren lotes reales se borra y Google empieza a mostrar
+     el sitio. Es el unico cambio que hace falta para abrirlo a buscadores. -->
 <meta name="robots" content="noindex,nofollow">
-<meta name="description" content="Rancho La Guayabia: se compra & se vende ganado. Demo de diseño.">
+<meta name="description" content="Rancho La Guayabia: compra y venta de ganado Gyr en El Salvador. Novillos, vaquillas, vacas y toros con edad, peso y ficha sanitaria por lote. El precio se da por WhatsApp.">
+<link rel="canonical" href="https://wilfredserpascontacto-collab.github.io/ganado-demo/">
 <title>Rancho La Guayabia · Venta de ganado</title>
+
+<!-- Tarjeta para cuando el enlace se comparte por WhatsApp, Facebook o Messenger.
+     og:image tiene que ser URL absoluta: las rutas relativas no las lee nadie. -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Rancho La Guayabia">
+<meta property="og:locale" content="es_SV">
+<meta property="og:url" content="https://wilfredserpascontacto-collab.github.io/ganado-demo/">
+<meta property="og:title" content="Rancho La Guayabia · Se compra &amp; se vende ganado">
+<meta property="og:description" content="Ganado Gyr con edad, peso y ficha sanitaria por lote. Se pesa en báscula frente a usted. Escríbanos por WhatsApp.">
+<meta property="og:image" content="https://wilfredserpascontacto-collab.github.io/ganado-demo/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ganado Gyr en el potrero del Rancho La Guayabia">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Rancho La Guayabia · Se compra &amp; se vende ganado">
+<meta name="twitter:description" content="Ganado Gyr con edad, peso y ficha sanitaria por lote. El precio se da por WhatsApp.">
+<meta name="twitter:image" content="https://wilfredserpascontacto-collab.github.io/ganado-demo/img/og.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400..700&display=swap">
 <style>
-/* Concepto: el libro de lotes de una hacienda. Reglas finas, cifras en mono,
-   y el arete amarillo (numero de lote) como unica marca de color. */
+/* Concepto: el libro de lotes de un rancho. Reglas finas, cifras en mono.
+   El amarillo (--tag) es el color de marca: botones, resaltador, pasos.
+   El arete lleva el azul de los aretes plasticos reales (.eartag), que
+   contrasta contra las fotos; si se prefiere amarillo se cambia alli. */
 :root{
   --bg:#E9EDF0; --surface:#F4F6F8; --raised:#FFFFFF; --ink:#16212B; --muted:#546270; --line:#CAD3DB;
   --leaf:#3A5168; --leaf-soft:#DCE5ED; --warn:#7B3A12; --warn-soft:#F3E0D2;
+  /* Disponible y reservado: verde contra ocre, para que se distingan de un vistazo. */
+  --ok:#1C6B41; --ok-soft:#D4EDDF;
   --tag:#E8B923; --tag-ink:#1A1608; --deep:#223240; --deep-ink:#E9EEF2; --deep-muted:#A0B1C0;
   --font-display:"Bricolage Grotesque","Arial Narrow",system-ui,sans-serif;
   --font-body:"Instrument Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
@@ -25,10 +50,12 @@
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
   --bg:#0E151C; --surface:#141E27; --raised:#1B2733; --ink:#E9EEF2; --muted:#9DAEBD; --line:#2B3947;
-  --leaf:#8FB4DA; --leaf-soft:#1D3144; --warn:#E9A875; --warn-soft:#3A2616; --deep:#0A1017; color-scheme:dark}}
+  --leaf:#8FB4DA; --leaf-soft:#1D3144; --warn:#E9A875; --warn-soft:#3A2616; --deep:#0A1017;
+  --ok:#74D6A0; --ok-soft:#10301F; color-scheme:dark}}
 :root[data-theme="dark"]{
   --bg:#0E151C; --surface:#141E27; --raised:#1B2733; --ink:#E9EEF2; --muted:#9DAEBD; --line:#2B3947;
-  --leaf:#8FB4DA; --leaf-soft:#1D3144; --warn:#E9A875; --warn-soft:#3A2616; --deep:#0A1017; color-scheme:dark}
+  --leaf:#8FB4DA; --leaf-soft:#1D3144; --warn:#E9A875; --warn-soft:#3A2616; --deep:#0A1017;
+  --ok:#74D6A0; --ok-soft:#10301F; color-scheme:dark}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;scroll-padding-top:84px}
 body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.55 var(--font-body);-webkit-font-smoothing:antialiased}
@@ -47,12 +74,14 @@ button,select{font:inherit;color:inherit}
 .demo b{background:var(--tag);color:var(--tag-ink);padding:2px 7px;border-radius:3px;margin-right:10px;letter-spacing:.1em}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 90%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;min-height:64px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 1.2rem/1 var(--font-display);letter-spacing:-.02em}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 1.2rem/1 var(--font-display);letter-spacing:-.02em;white-space:nowrap}
 .brand svg{width:30px;height:30px;flex:none}
 .nav{display:flex;align-items:center;gap:26px;font-size:.95rem;font-weight:500}
 .nav a{text-decoration:none;color:var(--muted)}
 .nav a:hover{color:var(--ink)}
-@media (max-width:760px){.nav a.hide-s{display:none}.nav{gap:14px}}
+@media (max-width:760px){.nav a.hide-s{display:none}.nav{gap:14px}
+  /* el nombre completo en una sola linea, junto al boton de contacto */
+  .brand{font-size:1.02rem;gap:8px}.brand .logo{width:34px;height:34px}}
 
 /* botones */
 .btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:10px;border:1.5px solid var(--ink);background:transparent;font-weight:600;font-size:.95rem;text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
@@ -73,7 +102,10 @@ button,select{font:inherit;color:inherit}
 /* hero */
 .hero{display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);gap:clamp(28px,5vw,72px);align-items:center;padding-block:clamp(32px,6vw,76px)}
 .hero h1{font:700 clamp(2.5rem,5.4vw,4.5rem)/1.02 var(--font-display);letter-spacing:-.035em;text-wrap:balance;margin-top:18px}
-.hero h1 mark{background:linear-gradient(transparent 62%,var(--tag) 62% 92%,transparent 92%);color:inherit;padding:0 .08em}
+/* El resaltador se mide en em (contra la letra), no en % de la caja de linea:
+   con line-height 1.02 los porcentajes caian debajo de las letras y parecia
+   un subrayado torcido. box-decoration-break lo reparte si el texto se parte. */
+.hero h1 mark{background:linear-gradient(var(--tag),var(--tag)) no-repeat 0 .46em/100% .34em;color:inherit;padding:0 .08em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 .hero .lead{margin-top:22px;max-width:52ch;font-size:1.12rem;color:var(--muted)}
 .hero .cta{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
 .facts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;margin-top:40px;padding-top:22px;border-top:1px solid var(--line)}
@@ -112,8 +144,9 @@ button,select{font:inherit;color:inherit}
 .card:has(.open:focus-visible){outline:3px solid var(--leaf);outline-offset:3px}
 .card .vis{position:relative}
 .card .vis .eartag{position:absolute;left:16px;top:0;z-index:2}
-.status{position:absolute;right:12px;top:12px;z-index:2;font:600 10.5px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;border-radius:999px}
-.status.ok{background:var(--leaf-soft);color:var(--leaf)}
+.status{position:absolute;right:12px;top:12px;z-index:2;font:600 10.5px/1 var(--font-mono);letter-spacing:.1em;text-transform:uppercase;padding:6px 9px;border-radius:999px;display:inline-flex;align-items:center;gap:6px;box-shadow:0 1px 6px rgba(8,18,12,.22)}
+.status::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+.status.ok{background:var(--ok-soft);color:var(--ok)}
 .status.res{background:var(--warn-soft);color:var(--warn)}
 .card .body{display:flex;flex-direction:column;gap:14px;padding:18px 18px 16px;flex:1}
 .card h3{font:650 1.35rem/1.15 var(--font-display);letter-spacing:-.02em}
@@ -404,6 +437,10 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
         <dl class="when">
           <div><dt>Días</dt><dd>Lunes a sábado</dd></div>
           <div><dt>Horario</dt><dd>6:00 a. m. a 4:00 p. m.</dd></div>
+          <!-- El logo de la marca dice SAN ILDELFONSO. El municipio de San Vicente
+               se escribe San Ildefonso, sin la segunda L. Se deja como el logo
+               para que no se contradigan; si Adilio confirma que es erratum del
+               logo, se corrigen los dos a la vez. -->
           <div><dt>Finca</dt><dd>San Ildelfonso</dd></div>
         </dl>
         <a class="btn primary wa-link" data-wa="Hola, quiero coordinar una visita a la finca." target="_blank" rel="noopener" href="#">Coordinar una visita por WhatsApp</a>
@@ -547,7 +584,7 @@ const TIPOS = {
    es abierto y el WhatsApp del dueno no se publica sin que el lo pida.
    Para poner el de verdad se cambian estas dos lineas y nada mas; el aviso
    de «numero de ejemplo» desaparece solo. */
-const TEL = { wa: "50370000000", visible: "+503 7000 0000" };
+const TEL = { wa: "12012820870", visible: "+1 (201) 282-0870" };
 const ES_EJEMPLO = TEL.wa === "50370000000";
 const waHref = (msg) => "https://wa.me/" + TEL.wa + "?text=" + encodeURIComponent(msg);
 
