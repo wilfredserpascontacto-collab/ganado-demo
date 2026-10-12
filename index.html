@@ -30,6 +30,40 @@
 <meta name="twitter:title" content="Rancho La Guayabia · Se compra &amp; se vende ganado">
 <meta name="twitter:description" content="Ganado Gyr con edad, peso y ficha sanitaria por lote. El precio se da por WhatsApp.">
 <meta name="twitter:image" content="https://rancholaguayabia.com/img/og.jpg">
+
+<!-- Ficha del negocio para los buscadores: nombre, telefono, direccion, coordenadas
+     y horario. Esto es lo que le dice a Google DONDE queda el rancho, mas que el
+     mapa de la pagina. No tiene efecto mientras el meta robots siga en noindex. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Rancho La Guayabia",
+  "description": "Compra y venta de ganado Gyr en El Salvador. Novillos, vaquillas, vacas y toros con edad, peso y ficha sanitaria por lote.",
+  "url": "https://rancholaguayabia.com/",
+  "image": "https://rancholaguayabia.com/img/og.jpg",
+  "logo": "https://rancholaguayabia.com/img/logo.jpg",
+  "telephone": "+12012820870",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Apastepeque",
+    "addressRegion": "San Vicente",
+    "addressCountry": "SV"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 13.640148,
+    "longitude": -88.616103
+  },
+  "openingHoursSpecification": [{
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"],
+    "opens": "06:00",
+    "closes": "16:00"
+  }],
+  "areaServed": { "@type": "Country", "name": "El Salvador" }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400..700&display=swap">
@@ -278,6 +312,18 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
 .visit .when dd{font-weight:600;text-align:right}
 @media (max-width:860px){.visit{grid-template-columns:minmax(0,1fr)}}
 
+/* mapa: el iframe de OpenStreetMap no pide llave ni rastrea.
+   Los botones de abajo son la parte util: abren la app de mapas del visitante. */
+.mapa{margin-top:clamp(28px,5vw,48px)}
+.mapa-caja{position:relative;border:1px solid var(--line);border-radius:22px;overflow:hidden;background:var(--surface);aspect-ratio:16/7}
+.mapa-caja iframe{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.mapa-pie{display:flex;flex-wrap:wrap;gap:14px 20px;align-items:center;justify-content:space-between;margin-top:18px}
+.mapa-dir{font-size:.98rem;color:var(--muted);max-width:46ch}
+.mapa-dir b{display:block;color:var(--ink);font-weight:600;margin-bottom:3px}
+.mapa-dir .coord{font:500 .82rem/1.4 var(--font-mono);letter-spacing:.02em;display:block;margin-top:5px}
+.mapa-btns{display:flex;flex-wrap:wrap;gap:10px}
+@media (max-width:640px){.mapa-caja{aspect-ratio:4/3}.mapa-btns{width:100%}.mapa-btns .btn{flex:1 1 0;min-width:0}}
+
 /* portada en teléfono: la foto a pantalla completa y el texto encima */
 .lead-s,.demo .s,.hs{display:none}
 @keyframes sube{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
@@ -442,8 +488,31 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
                para que no se contradigan; si Adilio confirma que es erratum del
                logo, se corrigen los dos a la vez. -->
           <div><dt>Finca</dt><dd>San Ildelfonso</dd></div>
+          <div><dt>Dónde</dt><dd>San Pedro, Apastepeque<br>San Vicente</dd></div>
         </dl>
         <a class="btn primary wa-link" data-wa="Hola, quiero coordinar una visita a la finca." target="_blank" rel="noopener" href="#">Coordinar una visita por WhatsApp</a>
+      </div>
+    </div>
+
+    <div class="mapa">
+      <div class="mapa-caja">
+        <iframe
+          src="https://www.openstreetmap.org/export/embed.html?bbox=-88.636103%2C13.620148%2C-88.596103%2C13.660148&amp;layer=mapnik&amp;marker=13.640148%2C-88.616103"
+          loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          title="Mapa de la ubicación del Rancho La Guayabia en Apastepeque, San Vicente"></iframe>
+      </div>
+      <div class="mapa-pie">
+        <p class="mapa-dir">
+          <b>Rancho La Guayabia</b>
+          San Pedro, Apastepeque, San Vicente, El Salvador
+          <span class="coord">13.640148, -88.616103</span>
+        </p>
+        <div class="mapa-btns">
+          <a class="btn primary" target="_blank" rel="noopener"
+             href="https://www.google.com/maps/dir/?api=1&amp;destination=13.640148%2C-88.616103">Cómo llegar</a>
+          <a class="btn" target="_blank" rel="noopener"
+             href="https://waze.com/ul?ll=13.640148%2C-88.616103&amp;navigate=yes">Abrir en Waze</a>
+        </div>
       </div>
     </div>
   </section>
