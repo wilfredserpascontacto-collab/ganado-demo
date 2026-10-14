@@ -6,11 +6,7 @@
 <link rel="preload" as="image" href="img/p5.jpg">
 <link rel="icon" type="image/png" href="img/logo-badge.png">
 <meta name="theme-color" content="#223240">
-<!-- INDEXACION: mientras los lotes del catalogo sean de ejemplo esta linea se
-     queda. El dia que entren lotes reales se borra y Google empieza a mostrar
-     el sitio. Es el unico cambio que hace falta para abrirlo a buscadores. -->
-<meta name="robots" content="noindex,nofollow">
-<meta name="description" content="Rancho La Guayabia: compra y venta de ganado Gyr en El Salvador. Novillos, vaquillas, vacas y toros con edad, peso y ficha sanitaria por lote. El precio se da por WhatsApp.">
+<meta name="description" content="Rancho La Guayabia: compra y venta de ganado Gyr en El Salvador. Mire las fotos de los animales y pregunte por el que le guste. El precio se habla por WhatsApp.">
 <link rel="canonical" href="https://rancholaguayabia.com/">
 <title>Rancho La Guayabia · Venta de ganado</title>
 
@@ -21,25 +17,25 @@
 <meta property="og:locale" content="es_SV">
 <meta property="og:url" content="https://rancholaguayabia.com/">
 <meta property="og:title" content="Rancho La Guayabia · Se compra &amp; se vende ganado">
-<meta property="og:description" content="Ganado Gyr con edad, peso y ficha sanitaria por lote. Se pesa en báscula frente a usted. Escríbanos por WhatsApp.">
+<meta property="og:description" content="Ganado Gyr criado en San Vicente. Mire las fotos y pregunte por el animal que le guste. El precio se habla por WhatsApp.">
 <meta property="og:image" content="https://rancholaguayabia.com/img/og.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Ganado Gyr en el potrero del Rancho La Guayabia">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Rancho La Guayabia · Se compra &amp; se vende ganado">
-<meta name="twitter:description" content="Ganado Gyr con edad, peso y ficha sanitaria por lote. El precio se da por WhatsApp.">
+<meta name="twitter:description" content="Ganado Gyr criado en San Vicente. Pregunte por el animal que le guste, por WhatsApp.">
 <meta name="twitter:image" content="https://rancholaguayabia.com/img/og.jpg">
 
 <!-- Ficha del negocio para los buscadores: nombre, telefono, direccion, coordenadas
      y horario. Esto es lo que le dice a Google DONDE queda el rancho, mas que el
-     mapa de la pagina. No tiene efecto mientras el meta robots siga en noindex. -->
+     mapa de la pagina. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Rancho La Guayabia",
-  "description": "Compra y venta de ganado Gyr en El Salvador. Novillos, vaquillas, vacas y toros con edad, peso y ficha sanitaria por lote.",
+  "description": "Compra y venta de ganado Gyr en El Salvador. Finca propia en Apastepeque, San Vicente.",
   "url": "https://rancholaguayabia.com/",
   "image": "https://rancholaguayabia.com/img/og.jpg",
   "logo": "https://rancholaguayabia.com/img/logo.jpg",
@@ -172,6 +168,16 @@ button,select{font:inherit;color:inherit}
 .selects{display:flex;flex-wrap:wrap;gap:10px}
 .select{min-height:40px;border:1.5px solid var(--line);border-radius:10px;background:var(--raised);padding:0 34px 0 12px;font-size:.9rem;appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--muted) 50%),linear-gradient(135deg,var(--muted) 50%,transparent 50%);background-position:calc(100% - 17px) 17px,calc(100% - 12px) 17px;background-size:5px 5px;background-repeat:no-repeat}
 .count{font:500 .8rem/1 var(--font-mono);color:var(--muted);margin-bottom:14px;letter-spacing:.04em}
+/* GALERIA: la foto manda. El pie es solo el nombre del color y el boton de
+   WhatsApp; a 1 columna en el telefono, 2 en tableta, 3 en pantalla grande. */
+.galeria{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:22px}
+.animal{position:relative;display:flex;flex-direction:column;background:var(--raised);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .18s,border-color .18s,box-shadow .18s}
+.animal:hover{transform:translateY(-3px);border-color:var(--ink);box-shadow:0 14px 30px -18px rgba(10,30,18,.5)}
+.animal>img{display:block;width:100%;aspect-ratio:4/3;object-fit:cover;background:var(--line)}
+/* Nombre arriba y boton abajo, siempre: si se dejan en la misma fila, los
+   nombres cortos quedan pegados al boton y la cuadricula se ve despareja. */
+.animal figcaption{display:flex;flex-direction:column;align-items:flex-start;gap:12px;padding:16px 18px 18px;margin-top:auto}
+.animal-nombre{font:650 1.12rem/1.2 var(--font-display);letter-spacing:-.015em}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,296px),1fr));gap:22px}
 .card{position:relative;display:flex;flex-direction:column;background:var(--raised);border:1px solid var(--line);border-radius:18px;overflow:hidden;transition:transform .18s,border-color .18s,box-shadow .18s}
 .card:hover{transform:translateY(-3px);border-color:var(--ink);box-shadow:0 14px 30px -18px rgba(10,30,18,.5)}
@@ -359,7 +365,6 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
 <body>
 
 
-<div class="demo"><div class="wrap"><b>DEMO</b><span class="l" id="avisoLargo"></span><span class="s">Lotes de ejemplo</span></div></div>
 
 <header class="top">
   <div class="wrap">
@@ -368,9 +373,9 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
       Rancho La Guayabia
     </a>
     <nav class="nav" aria-label="Principal">
-      <a class="hide-s" href="#lotes">Lotes</a>
+      <a class="hide-s" href="#animales">Los animales</a>
       <a class="hide-s" href="#como">Cómo se compra</a>
-      <a class="hide-s" href="#sanidad">Sanidad</a>
+      <a class="hide-s" href="#visitas">Visitas</a>
       <a class="btn primary sm" href="#contacto">Contacto</a>
     </nav>
   </div>
@@ -380,48 +385,37 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
   <section class="wrap hero">
     <div class="hero-text">
       <div class="eyebrow">Ganado Gyr · Se compra &amp; se vende</div>
-      <h1><span class="hl">Compra ganado <mark>por libra</mark>, con la báscula a la vista.</span><span class="hs">Ganado<br><mark>por libra</mark>,<br>sin sorpresas.</span></h1>
-      <p class="lead-s">Edad, peso y ficha sanitaria de cada lote, a la vista.</p>
-      <p class="lead">Lotes de engorde y de pie de cría de nuestras fincas. Cada uno trae su edad, su peso y su ficha sanitaria. El precio se da por WhatsApp.</p>
+      <h1><span class="hl">Ganado <mark>Gyr</mark>, criado en San Vicente.</span><span class="hs">Ganado<br><mark>Gyr</mark>,<br>de la finca.</span></h1>
+      <p class="lead-s">Mira los animales y pregunta por el que te guste.</p>
+      <p class="lead">Compramos y vendemos ganado Gyr. Mira las fotos de la manada, escríbenos por WhatsApp diciendo cuál te llamó la atención y de ahí hablamos.</p>
       <div class="cta">
-        <a class="btn primary" href="#lotes"><span class="hl2">Ver lotes disponibles</span><span class="hs">Ver los lotes</span></a>
+        <a class="btn primary" href="#animales"><span class="hl2">Ver los animales</span><span class="hs">Ver los animales</span></a>
         <a class="btn" href="#como">Cómo se compra</a>
       </div>
       <ul class="facts">
-        <li><b>Precio por libra</b>Se paga el peso real en pie, no un cálculo a ojo.</li>
-        <li><b>Báscula a la vista</b>El pesaje se hace con el comprador presente.</li>
-        <li><b>Ficha por lote</b>Vacunas, desparasitación y pruebas sanitarias por escrito.</li>
+        <li><b>Raza</b>Gyr, ganado cebuino hecho al calor y al pasto de aquí.</li>
+        <li><b>Pureza</b>Entre más puro el animal, más vale. Es lo primero que se mira.</li>
+        <li><b>Color</b>El pelaje cuenta: un color parejo o poco común levanta el precio.</li>
       </ul>
     </div>
     <figure class="stage" id="hero-stage"></figure>
   </section>
 
-  <section class="wrap sec" id="lotes">
+  <section class="wrap sec" id="animales">
     <div class="sec-head">
       <div>
-        <div class="eyebrow">Libro de lotes</div>
-        <h2>Lo que hay en el potrero esta semana</h2>
+        <div class="eyebrow">La manada</div>
+        <h2>Mira el ganado y pregunta por el que te guste</h2>
       </div>
-      <p class="sub">Toca un lote para ver su ficha y agregarlo a tu selección. Mándanos la lista por WhatsApp y te pasamos precio.</p>
+      <p class="sub">Todas estas fotos son de nuestros animales. Toca el botón de la foto que te llame la atención y nos llega tu mensaje por WhatsApp diciendo cuál es.</p>
     </div>
-    <div class="tools">
-      <div class="chips" id="chips" role="group" aria-label="Tipo de ganado"></div>
-      <div class="selects">
-        <select class="select" id="zona" aria-label="Departamento"></select>
-        <select class="select" id="orden" aria-label="Ordenar por">
-          <option value="lote">Por número de lote</option>
-          <option value="peso">Mayor peso</option>
-        </select>
-      </div>
-    </div>
-    <p class="count" id="count" role="status" aria-live="polite"></p>
-    <div class="grid" id="grid"></div>
+    <div class="galeria" id="galeria"></div>
   </section>
 
   <section class="wrap band" aria-label="Manada de ganado en el camino">
     <figure class="band-fig">
       <img src="" alt="Parte de la manada en el potrero, mirando a cámara" id="img-band">
-      <figcaption>Cada animal sale identificado con su arete.<small>Foto de ejemplo</small></figcaption>
+      <figcaption>Parte de la manada en el potrero.</figcaption>
     </figure>
   </section>
 
@@ -431,48 +425,16 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
         <div class="eyebrow">Cuatro pasos, en este orden</div>
         <h2>Cómo se compra</h2>
       </div>
+      <p class="sub">No vendemos por libra: aquí ese sistema no se usa. El precio sale de la raza, la pureza y el color del animal.</p>
     </div>
     <ol class="steps">
-      <li><span class="n">1</span><h3>Eliges tus lotes</h3><p>Marca los que te interesan y abre WhatsApp con la lista armada. Apartamos los lotes mientras coordinamos la visita.</p></li>
-      <li><span class="n">2</span><h3>Visitas la finca</h3><p>Ves los animales en el potrero, con quien los cuida. Si algo no te convence, se descarta ahí mismo.</p></li>
-      <li><span class="n">3</span><h3>Pesaje en báscula</h3><p>Se pesa frente a ti. El total se calcula con el peso real, libra por libra, al precio acordado.</p></li>
-      <li><span class="n">4</span><h3>Pago y entrega</h3><p>Pagas, recibes la carta de venta con la ficha del lote y coordinamos el transporte.</p></li>
+      <li><span class="n">1</span><h3>Escribes por el que te gustó</h3><p>Toca el botón de la foto y nos llega tu mensaje diciendo cuál animal es. Te contestamos por ahí mismo.</p></li>
+      <li><span class="n">2</span><h3>Hablamos de precio</h3><p>Aquí el ganado se valora por raza, por qué tan puro es el animal y por su color. Eso se conversa.</p></li>
+      <li><span class="n">3</span><h3>Vienes a verlo</h3><p>Lo ves en el potrero, con quien lo cuida. Si no te convence, no hay compromiso.</p></li>
+      <li><span class="n">4</span><h3>Pago y entrega</h3><p>Pagas, recibes la carta de venta y coordinamos el transporte.</p></li>
     </ol>
   </section>
 
-  <section class="wrap sec" id="sanidad">
-    <div class="sanidad">
-      <div>
-        <div class="eyebrow">Sanidad</div>
-        <h2>Cada lote sale con su historial</h2>
-        <p class="sub">Antes de ofrecer un lote se registran las vacunas, la desparasitación y las pruebas. Esa ficha se entrega al comprador junto con la carta de venta.</p>
-        <ul class="docs">
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.5 3 3 6-7"/></svg>Constancia de vacunas y desparasitación</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.5 3 3 6-7"/></svg>Resultados de pruebas de brucelosis y tuberculosis</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.5 3 3 6-7"/></svg>Carta de venta con el fierro registrado</li>
-        </ul>
-      </div>
-      <div class="sheet">
-        <img class="ph" id="img-sanidad" src="" alt="Vaquilla pinta de frente, con su arete en la oreja">
-        <header>
-          <span class="eartag" style="padding:14px 9px 6px;border-radius:8px 8px 12px 12px"><small>LOTE</small><span style="font-size:.95rem">0148</span></span>
-          <b>Ficha de ejemplo · 6 cabezas</b>
-        </header>
-        <div class="scroll">
-          <table>
-            <thead><tr><th>Fecha</th><th>Registro</th><th>Resultado</th></tr></thead>
-            <tbody>
-              <tr><td>12 ago 2026</td><td>Vacuna contra clostridiosis</td><td class="res-ok">Aplicada</td></tr>
-              <tr><td>12 ago 2026</td><td>Vacuna antirrábica</td><td class="res-ok">Aplicada</td></tr>
-              <tr><td>03 sep 2026</td><td>Desparasitación interna y externa</td><td class="res-ok">Realizada</td></tr>
-              <tr><td>18 sep 2026</td><td>Prueba de brucelosis</td><td class="res-ok">Negativo</td></tr>
-              <tr><td>24 sep 2026</td><td>Pesaje en báscula</td><td>1,040 lb de promedio</td></tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
   <section class="wrap sec" id="visitas">
     <div class="visit">
       <img id="img-visita" src="" alt="Dos reses en el corral de manejo">
@@ -490,7 +452,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
           <div><dt>Finca</dt><dd>San Ildelfonso</dd></div>
           <div><dt>Dónde</dt><dd>San Pedro, Apastepeque<br>San Vicente</dd></div>
         </dl>
-        <a class="btn primary wa-link" data-wa="Hola, quiero coordinar una visita a la finca." target="_blank" rel="noopener" href="#">Coordinar una visita por WhatsApp</a>
+        <a class="btn primary wa-link" data-wa="Quiero coordinar una visita a la finca. ¿Qué día puedo llegar?" target="_blank" rel="noopener" href="#">Coordinar una visita por WhatsApp</a>
       </div>
     </div>
 
@@ -521,9 +483,9 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
       <div>
         <div class="eyebrow">Se compra &amp; se vende</div>
         <h2>¿Tienes ganado para vender?</h2>
-        <p>También compramos. Cuéntanos cuántas cabezas tienes, la raza y el peso aproximado, y te respondemos con una oferta.</p>
+        <p>También compramos. Cuéntanos cuántas cabezas tienes, de qué raza y de qué color, mándanos una foto si puedes, y te respondemos.</p>
       </div>
-      <a class="btn primary wa-link" data-wa="Hola, tengo ganado para vender. Cantidad:  Raza:  Peso aproximado: " target="_blank" rel="noopener" href="#">Cotizar mi ganado</a>
+      <a class="btn primary wa-link" data-wa="Tengo ganado para vender.&#10;Cantidad: &#10;Raza: &#10;Color: " target="_blank" rel="noopener" href="#">Cotizar mi ganado</a>
     </div>
   </section>
 </main>
@@ -533,14 +495,13 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
     <div>
       <img class="flogo" src="img/logo.jpg" width="150" height="157" alt="Logo de Rancho La Guayabia">
       <p class="big">Rancho La Guayabia</p>
-      <p class="muted">Se compra &amp; se vende. Ganado de engorde y pie de cría. <span id="avisoPie"></span></p>
+      <p class="muted">Se compra &amp; se vende. Ganado Gyr, criado en Apastepeque, San Vicente.</p>
     </div>
     <div>
       <h3>En esta página</h3>
       <ul>
-        <li><a href="#lotes">Lotes disponibles</a></li>
+        <li><a href="#animales">Los animales</a></li>
         <li><a href="#como">Cómo se compra</a></li>
-        <li><a href="#sanidad">Sanidad</a></li>
         <li><a href="#visitas">Visitas a la finca</a></li>
       </ul>
     </div>
@@ -552,281 +513,87 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
   </div>
 </footer>
 
-<div class="tray" id="tray" hidden><div class="wrap"><ul id="trayList"></ul><button class="link" id="clear" type="button">Vaciar selección</button></div></div>
-<div class="bar" id="bar" hidden>
-  <div class="wrap">
-    <div class="sum"><b id="sumTotal">0 cabezas</b><span id="sumText"></span></div>
-    <div class="acts">
-      <button class="btn sm" id="toggleTray" type="button" aria-expanded="false" aria-controls="tray">Ver selección</button>
-      <a class="btn primary sm" id="wa" href="#" target="_blank" rel="noopener">Abrir WhatsApp con mi lista</a>
-    </div>
-  </div>
-</div>
-
-<div class="shade" id="shade" hidden></div>
-<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="dTitle" hidden></aside>
 
 <script>
-const IMG = {
-  p1:"img/p1.jpg",
-  p2:"img/p2.jpg",
-  p3:"img/p3.jpg",
-  p4:"img/p4.jpg",
-  p5:"img/p5.jpg",
-  p6:"img/p6.jpg",
-  p7:"img/p7.jpg",
-  p8:"img/p8.jpg",
-  p11:"img/p11.jpg",
-  p12:"img/p12.jpg"
-};
-let UID = 0;
-const BREEDS = {
-  gyr:     { body: "#A9512F", shade: "#86401F", dark: "#35190F", hump: true,  horn: "curve", ear: "long", patches: "#E6C7A2" },
-};
-function cattle(breed, scale = 1, bull = false) {
-  const b = BREEDS[breed], id = "c" + ++UID;
-  const torso = "M78 112C78 96 100 90 132 90L236 88C258 88 276 96 288 110L298 144C300 166 286 178 262 178L142 180C110 180 82 172 76 150Z";
-  const neckHead = bull
-    ? "M268 96C292 70 322 72 338 90L372 134C382 146 374 162 358 164L338 162C322 154 308 144 298 138L292 156Z"
-    : "M272 100C296 82 320 82 336 94L370 134C380 146 372 160 358 162L338 160C322 152 308 142 298 134L290 150Z";
-  const hump = b.hump ? `<path d="M200 94C214 56 258 52 282 104Z" fill="${b.body}"/>` : "";
-  const dew = `<path d="M296 138C306 160 296 176 264 178L284 146Z" fill="${b.shade}"/>`;
-  const legFar = (x) => `<path d="M${x} 168L${x+24} 168L${x+19} 244L${x+5} 244Z" fill="${b.shade}"/><rect x="${x+2}" y="242" width="20" height="8" rx="2" fill="${b.dark}"/>`;
-  const legNear = (x) => `<path d="M${x} 166L${x+26} 166L${x+20} 244L${x+6} 244Z" fill="${b.body}"/><rect x="${x+3}" y="242" width="20" height="8" rx="2" fill="${b.dark}"/>`;
-  const hind = (x, far) => `<path d="M${x} 138C${x+24} 138 ${x+42} 166 ${x+38} 190L${x+30} 244L${x+14} 244L${x+18} 200C${x+4} 190 ${x-6} 166 ${x} 138Z" fill="${far ? b.shade : b.body}"/><rect x="${x+12}" y="242" width="20" height="8" rx="2" fill="${b.dark}"/>`;
-  let patches = "";
-  if (b.patches) {
-    const p = b.patches;
-    patches = breed === "holstein"
-      ? `<ellipse cx="130" cy="118" rx="34" ry="24" fill="${p}"/><ellipse cx="212" cy="156" rx="30" ry="22" fill="${p}"/><ellipse cx="170" cy="100" rx="22" ry="12" fill="${p}"/><ellipse cx="318" cy="104" rx="20" ry="14" fill="${p}"/><ellipse cx="96" cy="160" rx="16" ry="14" fill="${p}"/>`
-      : `<ellipse cx="150" cy="130" rx="26" ry="16" fill="${p}" opacity=".85"/><ellipse cx="232" cy="150" rx="20" ry="14" fill="${p}" opacity=".85"/><ellipse cx="120" cy="170" rx="14" ry="9" fill="${p}" opacity=".85"/>`;
-  }
-  const horn = b.horn === "curve"
-    ? `<path d="M326 88C326 66 342 56 358 62" fill="none" stroke="#E9E2CF" stroke-width="7" stroke-linecap="round"/>`
-    : b.horn === "short"
-    ? `<path d="M326 88C326 76 334 70 344 70" fill="none" stroke="#E9E2CF" stroke-width="7" stroke-linecap="round"/>`
-    : "";
-  const ear = b.ear === "long"
-    ? `<path d="M316 90C296 84 280 98 284 120C300 118 316 108 320 96Z" fill="${b.shade}"/>`
-    : `<path d="M314 90C302 84 292 90 292 100C302 102 312 100 318 96Z" fill="${b.shade}"/>`;
-  return `<defs><clipPath id="${id}"><path d="${torso}"/><path d="${neckHead}"/>${b.hump ? `<path d="M200 94C214 56 258 52 282 104Z"/>` : ""}</clipPath></defs>
-  <g transform="translate(210 250) scale(${scale}) translate(-210 -250)">
-    <ellipse cx="205" cy="250" rx="170" ry="10" fill="#4C6B43" opacity=".28"/>
-    <path d="M80 112C58 122 54 162 62 204" fill="none" stroke="${b.dark}" stroke-width="6" stroke-linecap="round"/>
-    <ellipse cx="62" cy="212" rx="8" ry="15" fill="${b.dark}"/>
-    ${legFar(146)}${legFar(222)}
-    <g>${hump}<path d="${torso}" fill="${b.body}"/><path d="${neckHead}" fill="${b.body}"/></g>
-    <g clip-path="url(#${id})">${patches}</g>
-    ${dew}${hind(88)}${legNear(250)}
-    ${horn}${ear}
-    <circle cx="344" cy="108" r="3.6" fill="${b.dark}"/>
-    <ellipse cx="366" cy="152" rx="9" ry="9" fill="${b.dark}" opacity=".55"/>
-    <path d="M338 160C346 164 356 164 362 160" fill="none" stroke="${b.dark}" stroke-width="2" opacity=".5"/>
-  </g>`;
-}
-
-function scene(breed, scale, bull, label){
-  const g = "g" + (++UID);
-  return `<svg class="scene" viewBox="0 0 420 270" preserveAspectRatio="xMidYMid slice" role="img" aria-label="${label}">
-    <defs><linearGradient id="${g}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#CADFE8"/><stop offset=".64" stop-color="#EBF2E5"/></linearGradient></defs>
-    <rect width="420" height="270" fill="url(#${g})"/>
-    <circle cx="150" cy="50" r="19" fill="#F8EAB4" opacity=".95"/>
-    <path d="M0 176C70 138 130 150 190 164C250 178 320 128 420 158V270H0Z" fill="#B6CCA7"/>
-    <path d="M0 208C80 188 170 198 250 205C320 211 380 196 420 190V270H0Z" fill="#9DBB86"/>
-    <path d="M0 238H420V270H0Z" fill="#87AA72"/>
-    ${cattle(breed, scale, bull)}
-  </svg>`;
-}
-
-const TIPOS = {
-  novillo:  { uno: "Novillo",  varios: "Novillos",  escala: .98 },
-  vaquilla: { uno: "Vaquilla", varios: "Vaquillas", escala: .9 },
-  vaca:     { uno: "Vaca",     varios: "Vacas",     escala: .96 },
-  toro:     { uno: "Toro",     varios: "Toros",     escala: 1.04 },
-  ternero:  { uno: "Ternero",  varios: "Terneros",  escala: .72 },
-};
-/* La hacienda maneja una sola raza. Para agregar otra hacen falta dos cosas:
-   su nombre aqui, y su paleta en BREEDS (cuerpo, sombra, oscuro, giba,
-   cuerno, oreja), que es lo que dibuja a los lotes que no tienen foto. */
-/* EL TELEFONO VIVE AQUI Y EN NINGUN OTRO LADO.
-   La version publica de GitHub lleva el de ejemplo a proposito: el enlace
-   es abierto y el WhatsApp del dueno no se publica sin que el lo pida.
-   Para poner el de verdad se cambian estas dos lineas y nada mas; el aviso
-   de «numero de ejemplo» desaparece solo. */
+/* ---------------------------------------------------------------------------
+   EL TELEFONO VIVE AQUI Y EN NINGUN OTRO LADO.
+   Para cambiarlo se tocan estas dos lineas y nada mas: todos los botones de
+   WhatsApp de la pagina se arman solos a partir de aqui.
+   --------------------------------------------------------------------------- */
 const TEL = { wa: "12012820870", visible: "+1 (201) 282-0870" };
-const ES_EJEMPLO = TEL.wa === "50370000000";
-const waHref = (msg) => "https://wa.me/" + TEL.wa + "?text=" + encodeURIComponent(msg);
 
-const RAZAS = { gyr: "Gyr" };
-const V = "Vacunas al día", D = "Desparasitado", B = "Brucelosis: negativo", R = "Pruebas reproductivas";
+/* ---------------------------------------------------------------------------
+   DE DONDE VIENE EL CLIENTE
+   Todo mensaje que sale de esta pagina arranca con esta linea. Sirve para dos
+   cosas: don Adilio ve de una que ese chat vino del sitio y no de un conocido,
+   y puede escribir «rancholaguayabia.com» en el buscador de WhatsApp para que
+   le salgan todos los que han escrito desde la web, juntos.
 
-const LOTES = [
-  { id: "0148", foto: "p1", tipo: "novillo",  raza: "gyr",  meses: 30, peso: 1040, modo: "lb", cab: 6,  lugar: "Chapeltique, San Miguel",        dep: "San Miguel", estado: "ok",  sanidad: [V, D, B], nota: "Engordados a pasto. Lote parejo, listo para salida a rastro o a tu engorde." },
-  { id: "0152", foto: "p12", tipo: "novillo",  raza: "gyr",  meses: 26, peso: 960,  modo: "lb", cab: 12, lugar: "Anamorós, La Unión",             dep: "La Unión",   estado: "res", sanidad: [V, D],    nota: "Diferencia de peso de hasta 40 lb entre los animales del lote." },
-  { id: "0155", tipo: "vaquilla", raza: "gyr", meses: 24, peso: 980,  modo: "cab", cab: 8,  lugar: "Zacatecoluca, La Paz",           dep: "La Paz",     estado: "ok",  sanidad: [V, "Preñez confirmada", B], nota: "Preñadas de cinco a seis meses. Se venden por cabeza, sin pesaje." },
-  { id: "0161", tipo: "toro",     raza: "gyr",  meses: 42, peso: 1780, modo: "cab", cab: 1,  lugar: "Chapeltique, San Miguel",        dep: "San Miguel", estado: "res", sanidad: [V, D, R], nota: "Reproductor con dos años de monta. Dócil al manejo." },
-  { id: "0163", foto: "p8", tipo: "ternero",  raza: "gyr",  meses: 8,  peso: 460,  modo: "lb", cab: 20, lugar: "Jucuarán, Usulután",             dep: "Usulután",   estado: "ok",  sanidad: [V, D],    nota: "Destetados y adaptados a pasto." },
-  { id: "0170", tipo: "vaca",     raza: "gyr",    meses: 48, peso: 1180, modo: "cab", cab: 5,  lugar: "Izalco, Sonsonate",              dep: "Sonsonate",  estado: "ok",  sanidad: [V, "Con cría al pie", B], nota: "Paridas hace dos meses, con su cría a la par. Se venden por cabeza." },
-  { id: "0174", foto: "p7", tipo: "novillo",  raza: "gyr",      meses: 32, peso: 980,  modo: "lb", cab: 9,  lugar: "Santa Rosa de Lima, La Unión",   dep: "La Unión",   estado: "ok",  sanidad: [V, D],    nota: "Animales rústicos, de buena conversión en pasto de verano." },
-  { id: "0181", foto: "p11", tipo: "vaquilla", raza: "gyr",  meses: 20, peso: 720,  modo: "lb", cab: 10, lugar: "Anamorós, La Unión",             dep: "La Unión",   estado: "ok",  sanidad: [V, D, B], nota: "Para pie de cría. Aptas para su primer servicio." },
-  { id: "0186", tipo: "toro",     raza: "gyr",  meses: 36, peso: 1650, modo: "cab", cab: 2,  lugar: "Jucuarán, Usulután",             dep: "Usulután",   estado: "ok",  sanidad: [V, D, R], nota: "Reproductores jóvenes, con pruebas de fertilidad al día." },
-  { id: "0190", foto: "p6", tipo: "vaca",     raza: "gyr", meses: 60, peso: 1250, modo: "cab", cab: 4,  lugar: "Zacatecoluca, La Paz",           dep: "La Paz",     estado: "ok",  sanidad: [V, B],    nota: "En producción: 22 litros por día de promedio." },
-  { id: "0193", tipo: "ternero",  raza: "gyr",      meses: 7,  peso: 410,  modo: "lb", cab: 14, lugar: "Chapeltique, San Miguel",        dep: "San Miguel", estado: "res", sanidad: [V, D],    nota: "Destetados hace tres semanas." },
-  { id: "0197", tipo: "novillo",  raza: "gyr",  meses: 24, peso: 880,  modo: "lb", cab: 12, lugar: "Santa Rosa de Lima, La Unión",   dep: "La Unión",   estado: "ok",  sanidad: [V, D],    nota: "En ganancia de peso. Buen lote para terminar en tu finca." },
-];
+   Va con un renglon en blanco en medio para que en el chat se lea como dos
+   parrafos y no como una sola parrafada.
+   --------------------------------------------------------------------------- */
+const DE_LA_WEB = "Escribo desde la página web rancholaguayabia.com.\n\n";
+const waHref = (msg) => "https://wa.me/" + TEL.wa + "?text=" + encodeURIComponent(DE_LA_WEB + msg);
 
 const $ = (s, r = document) => r.querySelector(s);
-const n0 = (n) => Math.round(n).toLocaleString("en-US");
-const lb = (n) => n0(n) + " lb";
-const edad = (m) => m < 24 ? m + " meses" : (m % 12 === 0 ? m / 12 + " años" : Math.floor(m / 12) + " años " + (m % 12) + " meses");
-const nombre = (l) => TIPOS[l.tipo].uno + " " + RAZAS[l.raza];
-/* Las fotos vienen recortadas al formato de su hueco: el centro es el encuadre. */
-const POS = {};
-const imagen = (l) => l.foto
-  ? `<img class="photo" src="${IMG[l.foto]}" alt="Foto de ${nombre(l).toLowerCase()}" style="object-position:${POS[l.foto] || '50% 50%'}">`
-  : scene(l.raza, TIPOS[l.tipo].escala, l.tipo === "toro", "Ilustración de " + nombre(l).toLowerCase());
-const tag = (id, cls = "") => `<span class="eartag ${cls}"><small>LOTE</small><span>${id}</span></span>`;
-const CHECK = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="m7.5 12.5 3 3 6-7"/></svg>';
 
-/* hero: foto y cifras del propio catalogo */
-(() => {
-  const cabs = LOTES.reduce((t, l) => t + l.cab, 0), deps = new Set(LOTES.map((l) => l.dep)).size;
-  $("#hero-stage").innerHTML = `<img class="photo" src="${IMG.p5}" alt="Vaca colorada en el potrero, con parte de la manada alrededor" style="object-position:50% 50%;aspect-ratio:4/3">` +
-    `<dl class="stage-ledger"><div><dt>Lotes</dt><dd>${LOTES.length}</dd></div><div><dt>Cabezas</dt><dd>${cabs}</dd></div><div><dt>Departamentos</dt><dd>${deps}</dd></div></dl>`;
-  $("#img-band").src = IMG.p3; $("#img-sanidad").src = IMG.p4; $("#img-visita").src = IMG.p2;
-})();
+/* ---------------------------------------------------------------------------
+   LA GALERIA
+   Cada entrada es una foto real de la manada. El texto describe UNICAMENTE lo
+   que se ve en la foto: el color del pelaje y poco mas. No lleva peso, edad,
+   cabezas ni resultados de laboratorio, porque esos datos no los tenemos y
+   publicarlos seria inventarle al comprador.
 
-/* catalogo */
-const st = { tipo: "todos", dep: "", orden: "lote" };
-function pintaFiltros() {
-  const cuenta = (t) => LOTES.filter((l) => t === "todos" || l.tipo === t).length;
-  $("#chips").innerHTML = [["todos", "Todos"], ...Object.entries(TIPOS).map(([k, v]) => [k, v.varios])]
-    .map(([k, t]) => `<button class="chip" type="button" data-tipo="${k}" aria-pressed="${st.tipo === k}">${t} <em>${cuenta(k)}</em></button>`).join("");
-  const deps = [...new Set(LOTES.map((l) => l.dep))].sort((a, b) => a.localeCompare(b, "es"));
-  $("#zona").innerHTML = `<option value="">Todo el país</option>` + deps.map((d) => `<option value="${d}">${d}</option>`).join("");
-  $("#zona").value = st.dep;
-}
-function pintaGrid() {
-  let ls = LOTES.filter((l) => (st.tipo === "todos" || l.tipo === st.tipo) && (!st.dep || l.dep === st.dep));
-  if (st.orden === "peso") ls.sort((a, b) => b.peso - a.peso);
-  $("#count").textContent = ls.length === 1 ? "1 lote" : ls.length + " lotes";
-  if (!ls.length) { $("#grid").innerHTML = `<div class="empty" style="grid-column:1/-1">No hay lotes con ese filtro. Prueba con otro tipo o con todo el país.</div>`; return; }
-  $("#grid").innerHTML = ls.map((l) => `
-    <article class="card">
-      <div class="vis">${tag(l.id)}<span class="status ${l.estado}">${l.estado === "ok" ? "Disponible" : "Reservado"}</span>${imagen(l)}</div>
-      <div class="body">
-        <div><h3>${nombre(l)}</h3><p class="where">${edad(l.meses)} · ${l.lugar}</p></div>
-        <dl class="ledger"><div><dt>Peso</dt><dd>${lb(l.peso)}</dd></div><div><dt>Precio</dt><dd class="ask">Consultar</dd></div><div><dt>Cabezas</dt><dd>${l.cab}</dd></div></dl>
-        <ul class="mini">${l.sanidad.slice(0, 2).map((s) => `<li>${s}</li>`).join("")}</ul>
-        <div class="more"><span>Ver ficha</span><span aria-hidden="true">→</span></div>
-      </div>
-      <button class="open" type="button" data-id="${l.id}" aria-label="Ver ficha del lote ${l.id}, ${nombre(l)}"></button>
-    </article>`).join("");
-}
-$("#chips").addEventListener("click", (e) => { const b = e.target.closest("[data-tipo]"); if (!b) return; st.tipo = b.dataset.tipo; pintaFiltros(); pintaGrid(); });
-$("#zona").addEventListener("change", (e) => { st.dep = e.target.value; pintaGrid(); });
-$("#orden").addEventListener("change", (e) => { st.orden = e.target.value; pintaGrid(); });
-$("#grid").addEventListener("click", (e) => { const b = e.target.closest(".open"); if (b) abre(b.dataset.id, b); });
+   Para agregar un animal: se sube la foto a img/ y se agrega una linea aqui.
+   El boton de WhatsApp se arma solo con el nombre que le pongas.
+   --------------------------------------------------------------------------- */
+const ANIMALES = [
+  { foto: "img/p1.jpg",  nombre: "Colorado entero",        alt: "Res Gyr de pelaje colorado parejo, de perfil en el corral" },
+  { foto: "img/p12.jpg", nombre: "Blanco moteado de rojo", alt: "Res Gyr blanca con motas rojas, de pie en el corral" },
+  { foto: "img/p6.jpg",  nombre: "Blanco de cabeza oscura",alt: "Res Gyr blanca con la cabeza y las orejas oscuras" },
+  { foto: "img/p2.jpg",  nombre: "Pinto rojo y blanco",    alt: "Res Gyr pinta de rojo y blanco, de frente" },
+  { foto: "img/p4.jpg",  nombre: "Moteado, en el potrero", alt: "Res Gyr moteada en el potrero, con otra res detras" },
+  { foto: "img/p11.jpg", nombre: "Pinto oscuro",           alt: "Res Gyr de pelaje pinto oscuro, pastando" },
+  { foto: "img/p8.jpg",  nombre: "Colorada con su cría",   alt: "Vaca Gyr colorada con su ternero mamando, en el corral" },
+];
 
-/* seleccion */
-const sel = new Map();
-function totales() {
-  let cabs = 0;
-  for (const [, h] of sel) cabs += h;
-  return { cabs };
-}
-function pintaBarra() {
-  const bar = $("#bar"), vacio = sel.size === 0;
-  bar.hidden = vacio; document.body.classList.toggle("has-bar", !vacio);
-  if (vacio) { $("#tray").hidden = true; $("#toggleTray").setAttribute("aria-expanded", "false"); return; }
-  const { cabs } = totales();
-  $("#sumTotal").textContent = `${cabs} ${cabs === 1 ? "cabeza" : "cabezas"}`;
-  $("#sumText").textContent = `en ${sel.size} ${sel.size === 1 ? "lote" : "lotes"} · el precio se acuerda por WhatsApp`;
-  const lineas = [...sel].map(([id, h]) => { const l = LOTES.find((x) => x.id === id); return `• Lote ${id}: ${nombre(l)}, ${h} ${h === 1 ? "cabeza" : "cabezas"}`; });
-  const msg = `Hola, vi su página y me interesan estos lotes:\n${lineas.join("\n")}\n¿Me pueden pasar precio? También quisiera saber cuándo puedo visitar la finca.`;
-  $("#wa").href = waHref(msg);
-  $("#trayList").innerHTML = [...sel].map(([id, h]) => { const l = LOTES.find((x) => x.id === id);
-    return `<li>${tag(id)}<div class="t">${nombre(l)}<small>${h} ${h === 1 ? "cabeza" : "cabezas"}</small></div><button class="link" type="button" data-rm="${id}">Quitar</button></li>`; }).join("");
-  document.documentElement.style.setProperty("--bar-h", bar.offsetHeight + "px");
-}
-$("#toggleTray").addEventListener("click", () => { const t = $("#tray"); t.hidden = !t.hidden; $("#toggleTray").setAttribute("aria-expanded", String(!t.hidden)); $("#toggleTray").textContent = t.hidden ? "Ver selección" : "Ocultar selección"; });
-$("#trayList").addEventListener("click", (e) => { const b = e.target.closest("[data-rm]"); if (!b) return; sel.delete(b.dataset.rm); pintaBarra(); });
-$("#clear").addEventListener("click", () => { sel.clear(); pintaBarra(); });
+const galeria = () => {
+  const caja = $("#galeria");
+  if (!caja) return;
+  caja.innerHTML = ANIMALES.map((a, i) => {
+    const msg = "Me interesa el ganado de la foto " + (i + 1) +
+                " (" + a.nombre.toLowerCase() + "). ¿Me puede dar más información?";
+    return `<figure class="animal">
+      <img src="${a.foto}" alt="${a.alt}" loading="lazy" decoding="async">
+      <figcaption>
+        <span class="animal-nombre">${a.nombre}</span>
+        <a class="btn primary sm" target="_blank" rel="noopener" href="${waHref(msg)}">Preguntar por este</a>
+      </figcaption>
+    </figure>`;
+  }).join("");
+};
 
-/* ficha */
-let abierto = null, heads = 1, volver = null;
-function abre(id, origen) {
-  const l = LOTES.find((x) => x.id === id); abierto = l; volver = origen; heads = sel.get(id) || 1;
-  const d = $("#drawer");
-  d.innerHTML = `<button class="close" id="dClose" type="button" aria-label="Cerrar ficha">×</button>
-    <div class="vis">${tag(l.id, "lg")}${imagen(l)}</div>
-    <div class="in">
-      <div><h2 id="dTitle">${nombre(l)}</h2><p class="where">${l.lugar}</p></div>
-      <dl class="specs">
-        <div><dt>Raza</dt><dd>${RAZAS[l.raza]}</dd></div><div><dt>Categoría</dt><dd>${TIPOS[l.tipo].uno}</dd></div>
-        <div><dt>Edad</dt><dd>${edad(l.meses)}</dd></div><div><dt>Peso promedio</dt><dd class="mono">${lb(l.peso)}</dd></div>
-        <div><dt>Precio</dt><dd class="ask">Por WhatsApp</dd></div><div><dt>Cabezas en el lote</dt><dd class="mono">${l.cab}</dd></div>
-      </dl>
-      <div class="nota">${l.nota}</div>
-      <div><h3>Sanidad</h3><ul class="checks">${l.sanidad.map((s) => `<li>${CHECK}${s}</li>`).join("")}</ul></div>
-      <div class="calc">
-        <div class="row"><strong>¿Cuántas cabezas?</strong>
-          <div class="step"><button type="button" id="mn" aria-label="Una cabeza menos">−</button><output id="hv" aria-live="polite"></output><button type="button" id="mp" aria-label="Una cabeza más">+</button></div></div>
-        <div class="lines" id="lines"></div>
-        <p class="foot-note">El precio se acuerda por WhatsApp. ${l.modo === "lb" ? "El peso final se confirma en la báscula, frente a ti." : "Este lote se vende por cabeza, sin pesaje."}</p>
-      </div>
-      <div class="actions">
-        <button class="btn primary" id="add" type="button"${l.estado === "res" ? " disabled" : ""}></button>
-        ${l.estado === "res" ? `<p class="where">Este lote está reservado. Escríbenos si quieres que te avisemos si se libera.</p>` : ""}
-      </div>
-    </div>`;
-  calcula();
-  $("#shade").hidden = false; d.hidden = false;
-  $("main").inert = true; $(".top").inert = true; $("footer").inert = true;
-  $("#bar").inert = true; $("#tray").inert = true;
-  d.scrollTop = 0; $("#dClose").focus();
-}
-function calcula() {
-  const l = abierto; $("#hv").textContent = heads;
-  $("#mn").disabled = heads <= 1; $("#mp").disabled = heads >= l.cab;
-  $("#lines").innerHTML = l.modo === "lb"
-    ? `<div><span>Peso total estimado</span><b>${lb(l.peso * heads)}</b></div>`
-    : "";
-  $("#add").textContent = sel.has(l.id) ? "Actualizar mi selección" : "Agregar a mi selección";
-}
-function cierra() {
-  $("#drawer").hidden = true; $("#shade").hidden = true;
-  for (const s of ["main", ".top", "footer", "#bar", "#tray"]) $(s).inert = false;
-  abierto = null; if (volver) volver.focus();
-}
-$("#drawer").addEventListener("click", (e) => {
-  if (e.target.closest("#dClose")) return cierra();
-  if (e.target.closest("#mn") && heads > 1) { heads--; calcula(); }
-  if (e.target.closest("#mp") && heads < abierto.cab) { heads++; calcula(); }
-  if (e.target.closest("#add") && !e.target.closest("#add").disabled) { sel.set(abierto.id, heads); pintaBarra(); cierra(); }
-});
-$("#shade").addEventListener("click", cierra);
-document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !$("#drawer").hidden) cierra(); });
+/* Fotos fijas del resto de la pagina */
+$("#hero-stage").innerHTML =
+  `<img class="photo" src="img/p5.jpg" alt="Res Gyr colorada en el potrero, con parte de la manada alrededor" style="object-position:50% 50%;aspect-ratio:4/3">`;
+$("#img-band").src = "img/p3.jpg";
+$("#img-visita").src = "img/p7.jpg";
 
-/* copiar numero */
-$("#copy").addEventListener("click", async () => {
-  const b = $("#copy"), t = $("#numtxt");
-  try { await navigator.clipboard.writeText(t.textContent); b.textContent = "Copiado"; }
-  catch { const r = document.createRange(); r.selectNodeContents(t); const s = getSelection(); s.removeAllRanges(); s.addRange(r); b.textContent = "Seleccionado"; }
-  setTimeout(() => (b.textContent = "Copiar"), 1800);
-});
-
+/* Todos los enlaces de WhatsApp de la pagina, armados desde TEL */
 for (const a of document.querySelectorAll(".wa-link")) a.href = waHref(a.dataset.wa);
 $("#numtxt").textContent = TEL.visible;
-$("#avisoLargo").textContent = ES_EJEMPLO
-  ? "Diseño de ejemplo: los lotes y el teléfono son de ejemplo. Las fotos son reales."
-  : "Diseño de ejemplo: los lotes son de ejemplo. Las fotos y el teléfono son reales.";
-$("#avisoPie").textContent = ES_EJEMPLO
-  ? "Esta página es un demo de diseño: los lotes y el teléfono son de ejemplo."
-  : "Esta página es un demo de diseño: los lotes son de ejemplo.";
-if (ES_EJEMPLO) $("#numtxt").closest(".num").insertAdjacentHTML("afterend",
-  `<p class="muted" style="margin-top:10px;font-size:.85rem">Número de ejemplo.</p>`);
-pintaFiltros(); pintaGrid(); pintaBarra();
+
+/* Copiar el numero */
+const btnCopiar = $("#copy");
+if (btnCopiar) btnCopiar.addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(TEL.visible);
+    btnCopiar.textContent = "Copiado";
+    setTimeout(() => (btnCopiar.textContent = "Copiar"), 1800);
+  } catch { /* si el navegador no deja, el numero igual esta a la vista */ }
+});
+
+galeria();
 </script>
 
 </body>
