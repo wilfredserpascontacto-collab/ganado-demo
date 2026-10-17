@@ -359,6 +359,13 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
 }
 @media (prefers-reduced-motion:reduce){.hero-text>*{animation:none!important}}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+
+/* para saber mas: tres guias */
+.saber{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,260px),1fr));gap:18px}
+.saber a{display:flex;flex-direction:column;gap:8px;height:100%;padding:20px 22px;border:1px solid var(--line);border-radius:16px;background:var(--raised);text-decoration:none;transition:transform .18s,border-color .18s}
+.saber a:hover{transform:translateY(-3px);border-color:var(--ink)}
+.saber b{font:650 1.2rem/1.2 var(--font-display);letter-spacing:-.015em}
+.saber span{color:var(--muted);font-size:.95rem}
 [hidden]{display:none!important}
 </style>
 </head>
@@ -376,6 +383,7 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
       <a class="hide-s" href="#animales">Los animales</a>
       <a class="hide-s" href="#como">Cómo se compra</a>
       <a class="hide-s" href="#visitas">Visitas</a>
+      <a class="hide-s" href="/ganado-gyr/">Ganado Gyr</a>
       <a class="btn primary sm" href="#contacto">Contacto</a>
     </nav>
   </div>
@@ -478,6 +486,20 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
       </div>
     </div>
   </section>
+  <section class="wrap sec" id="saber">
+    <div class="sec-head">
+      <div>
+        <div class="eyebrow">Para saber más</div>
+        <h2>Antes de comprar, infórmate</h2>
+      </div>
+      <p class="sub">Tres guías cortas sobre la raza, los trámites y el estado de la ganadería en el país.</p>
+    </div>
+    <ul class="saber">
+      <li><a href="/ganado-gyr/"><b>Ganado Gyr</b><span>De dónde viene la raza y cómo se reconoce a simple vista.</span></a></li>
+      <li><a href="/comprar-ganado-el-salvador/"><b>Comprar ganado en El Salvador</b><span>Qué mirar en el animal y qué trámites se hacen en el MAG.</span></a></li>
+      <li><a href="/ganaderia-san-vicente/"><b>Ganadería en San Vicente</b><span>Cuántas reses hay en el país y por qué han bajado.</span></a></li>
+    </ul>
+  </section>
   <section class="wrap sec" id="vende">
     <div class="buy">
       <div>
@@ -503,6 +525,9 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
         <li><a href="#animales">Los animales</a></li>
         <li><a href="#como">Cómo se compra</a></li>
         <li><a href="#visitas">Visitas a la finca</a></li>
+        <li><a href="/ganado-gyr/">Ganado Gyr</a></li>
+        <li><a href="/comprar-ganado-el-salvador/">Comprar ganado en El Salvador</a></li>
+        <li><a href="/ganaderia-san-vicente/">Ganadería en San Vicente</a></li>
       </ul>
     </div>
     <div>
@@ -514,26 +539,9 @@ img.photo{display:block;width:100%;height:auto;aspect-ratio:420/270;object-fit:c
 </footer>
 
 
+<script src="/wa.js"></script>
 <script>
-/* ---------------------------------------------------------------------------
-   EL TELEFONO VIVE AQUI Y EN NINGUN OTRO LADO.
-   Para cambiarlo se tocan estas dos lineas y nada mas: todos los botones de
-   WhatsApp de la pagina se arman solos a partir de aqui.
-   --------------------------------------------------------------------------- */
-const TEL = { wa: "12012820870", visible: "+1 (201) 282-0870" };
-
-/* ---------------------------------------------------------------------------
-   DE DONDE VIENE EL CLIENTE
-   Todo mensaje que sale de esta pagina arranca con esta linea. Sirve para dos
-   cosas: don Adilio ve de una que ese chat vino del sitio y no de un conocido,
-   y puede escribir «rancholaguayabia.com» en el buscador de WhatsApp para que
-   le salgan todos los que han escrito desde la web, juntos.
-
-   Va con un renglon en blanco en medio para que en el chat se lea como dos
-   parrafos y no como una sola parrafada.
-   --------------------------------------------------------------------------- */
-const DE_LA_WEB = "Escribo desde la página web rancholaguayabia.com.\n\n";
-const waHref = (msg) => "https://wa.me/" + TEL.wa + "?text=" + encodeURIComponent(DE_LA_WEB + msg);
+/* TEL, DE_LA_WEB y waHref viven en /wa.js, compartido con las paginas de contenido. */
 
 const $ = (s, r = document) => r.querySelector(s);
 
